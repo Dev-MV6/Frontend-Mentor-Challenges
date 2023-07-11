@@ -1,0 +1,10 @@
+README-template.md
+
+**/.sketch
+**/.xd
+**/.fig
+**/.DS_Store
+**/.prettierignore
+
+**/design
+**/style-guide.md
