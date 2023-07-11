@@ -1,0 +1,479 @@
+@font-face {
+  font-family: Ubuntu;
+  src: url(../assets/fonts/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+  font-family: Ubuntu-Medium;
+  src: url(../assets/fonts/Ubuntu-Medium.ttf);
+}
+
+@font-face {
+  font-family: Ubuntu-Bold;
+  src: url(../assets/fonts/Ubuntu-Bold.ttf);
+}
+
+::selection {
+  color: #fff;
+  background-color: var(--purplish-blue);
+}
+
+:root {
+  --marine-blue: hsl(213, 96%, 18%);
+  --light-blue: hsl(206, 94%, 87%);
+  --alabaster: hsl(231, 100%, 99%);
+  --cool-gray: hsl(231, 11%, 63%);
+  --light-gray: hsl(229, 24%, 87%);
+  --magnolia: hsl(217, 100%, 97%);
+  --purplish-blue: hsl(243, 100%, 62%);
+  --pastel-blue: hsl(228, 100%, 84%);
+  --strawberry-red: hsl(354, 84%, 57%);
+  --gray: #555;
+  --control-border-radius: 8px;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: Ubuntu;
+}
+
+body {
+  background-color: var(--magnolia);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#main_container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+  width: 980px;
+  min-width: 980px;
+  height: 620px;
+  min-height: 620px;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 10px 15px #0001;
+}
+
+#sidebar {
+  box-sizing: border-box;
+  user-select: none;
+  padding-top: 20px;
+  padding-left: 40px;
+  height: 100%;
+  width: 300px;
+  color: var(--alabaster);
+  background: url(../assets/images/bg-sidebar-desktop.svg) no-repeat;
+  background-size: contain;
+}
+
+.sidebar__step {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.sidebar__step-indicator {
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 35px;
+  width: 35px;
+  border: 1px;
+  font-family: Ubuntu-Medium;
+  border: solid 1px var(--alabaster);
+}
+
+.step_indicator--active {
+  border: solid 1px transparent;
+  background-color: var(--light-blue);
+  color: var(--marine-blue);
+}
+
+.sidebar__step-description {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.sidebar__step-description span:nth-child(1) {
+  color: var(--light-gray);
+  font-size: 0.8em;
+}
+
+.sidebar__step-description span:nth-child(2) {
+  font-family: Ubuntu-Bold;
+  margin-top: 3px;
+}
+
+#step_screen {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}
+
+.step_screen__content {
+  display: none;
+  padding-top: 25px;
+}
+
+.step_screen__content--active {
+  display: block;
+}
+
+#step_screen__control_buttons {
+  display: flex;
+  width: 100%;
+  margin-top: auto;
+  margin-bottom: 25px;
+}
+
+#step_screen__prev_step_btn {
+  display: none;
+  color: var(--cool-gray);
+  background: none;
+  font-family: Ubuntu-Medium;
+  border: none;
+  font-size: 1em;
+  transition: color 0.3s;
+}
+
+#step_screen__prev_step_btn:hover {
+  color: var(--marine-blue);
+  cursor: pointer;
+}
+
+#step_screen__prev_step_btn:focus-visible {
+  text-decoration: underline;
+  outline: none;
+}
+
+#step_screen__next_step_btn {
+  border-radius: var(--control-border-radius);
+  margin-left: auto;
+  color: var(--alabaster);
+  background-color: var(--marine-blue);
+  font-family: Ubuntu-Medium;
+  border: none;
+  width: 130px;
+  height: 50px;
+  transition: opacity 0.3s;
+  font-size: 1em;
+}
+
+#step_screen__next_step_btn:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+#step_screen__next_step_btn:active {
+  opacity: 1;
+}
+
+#step_screen__next_step_btn:focus-visible {
+  outline: 1px solid var(--marine-blue);
+  outline-offset: 2px;
+}
+
+.step_screen__title {
+  color: var(--marine-blue);
+  font-size: 2.2em;
+  font-family: Ubuntu-Medium;
+  margin-bottom: 10px;
+}
+
+.step_screen__paragraph {
+  color: var(--cool-gray);
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+
+.step_screen__form_control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.step_screen__form_control label {
+  color: var(--marine-blue);
+  margin-bottom: 10px;
+  font-size: 0.9em;
+}
+
+.step_screen__input {
+  border-radius: var(--control-border-radius);
+  font-size: 1em;
+  font-family: Ubuntu-Medium;
+  border: 1px solid;
+  border-color: var(--light-gray);
+  outline: none;
+  padding: 15px;
+  color: var(--marine-blue);
+}
+
+.step_screen__input::placeholder {
+  color: var(--cool-gray);
+  opacity: 0.7;
+}
+
+.step_screen__input:focus-visible {
+  border-color: var(--purplish-blue) !important;
+}
+
+.field_validation_alert {
+  font-family: Ubuntu-Bold;
+  color: var(--strawberry-red);
+  font-size: 0.9em;
+  display: none;
+}
+
+/* Step 2 */
+.step_screen__option_box {
+  display: flex;
+  border: 1px solid;
+  border-color: var(--light-gray);
+  padding: 20px;
+  border-radius: var(--control-border-radius);
+}
+
+.step_screen__option_box * {
+  pointer-events: none;
+}
+
+.step_screen__option_box--selected {
+  background-color: var(--alabaster);
+  border-color: var(--purplish-blue);
+}
+
+.step_screen__option_box-icon {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 40px;
+}
+
+.step_screen__option_box-description {
+  font-family: Ubuntu-Medium;
+  font-size: 1.1em;
+  color: var(--marine-blue);
+}
+
+.step_screen__option_box-auxiliar {
+  color: var(--cool-gray);
+  margin-top: 5px;
+}
+
+.step_screen__option_box-extra {
+  pointer-events: none;
+  color: var(--marine-blue);
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+.step_screen__option_box:focus-visible,
+.step_screen__option_box:hover {
+  outline: none;
+  border-color: var(--purplish-blue);
+}
+
+.step_screen__option_box:hover {
+  cursor: pointer;
+}
+
+#step_screen__content_2__plan_selection {
+  display: flex;
+  justify-content: space-between;
+}
+
+#step_screen__content_2__plan_selection .step_screen__option_box {
+  width: 110px;
+  flex-direction: column;
+}
+
+#step_screen__content_2__plan_selection .step_screen__option_box-extra {
+  display: none;
+}
+
+#step_screen__content_2__plan_billing_control {
+  border-radius: var(--control-border-radius);
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  background-color: var(--alabaster);
+  padding: 20px;
+}
+
+.toggle_switch:hover,
+.toggle_switch-option:hover {
+  cursor: pointer;
+}
+
+.toggle_switch-option {
+  font-family: Ubuntu-Medium;
+  color: var(--cool-gray);
+  user-select: none;
+}
+
+.toggle_switch-option:focus-visible {
+  outline: none;
+  text-decoration: underline;
+}
+
+.toggle_switch {
+  order: 2;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-radius: 20px;
+  height: 20px;
+  width: 40px;
+  background-color: var(--marine-blue);
+  position: relative;
+}
+
+.toggle_switch::after {
+  content: '';
+  background-color: #fff;
+  border-radius: 100%;
+  width: 12px;
+  height: 12px;
+  left: 4px;
+  top: 4px;
+  position: absolute;
+  transition: left 300ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+#billing_toggle_switch:checked + .toggle_switch::after {
+  left: 24px;
+  top: 4px;
+}
+
+#billing_option-monthly {
+  order: 1;
+  transition: color 300ms;
+}
+
+#billing_option-yearly {
+  order: 3;
+  transition: color 300ms;
+}
+
+#billing_toggle_switch:checked ~ #billing_option-yearly {
+  color: var(--marine-blue);
+}
+
+#billing_toggle_switch:not(:checked) ~ #billing_option-monthly {
+  color: var(--marine-blue);
+}
+
+/* Step 3 */
+.addon_checkbox {
+  accent-color: var(--purplish-blue);
+  min-width: 20px;
+  min-height: 20px;
+  margin-right: 30px;
+}
+
+#step_screen__content_3__addons .step_screen__option_box {
+  align-items: center;
+  margin-bottom: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+#step_screen__content_3__addons .step_screen__option_box-extra {
+  color: var(--purplish-blue);
+}
+
+.addon_content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  flex-direction: row;
+}
+
+/* Step 4 */
+#step_screen__content_4__summary {
+  padding-top: 1px;
+  margin-top: -1px;
+  padding-bottom: 1px;
+  margin-bottom: -1px;
+  background-color: var(--alabaster);
+  border-radius: var(--control-border-radius);
+}
+
+.form_summary-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 25px;
+}
+
+.form_summary-item-description {
+  color: var(--cool-gray);
+  margin-right: 10px;
+}
+
+.form_summary-item-price {
+  color: var(--marine-blue);
+}
+
+#form_summary-plan-name {
+  font-family: Ubuntu-Medium;
+  color: var(--marine-blue);
+  font-size: 1.1em;
+  margin-bottom: 5px;
+  margin-right: 10px;
+}
+
+#form_summary-plan-change_btn {
+  color: var(--cool-gray);
+  user-select: none;
+  text-decoration: underline;
+}
+
+#form_summary-plan-change_btn:hover {
+  cursor: pointer;
+  color: var(--purplish-blue);
+}
+
+#form_summary-plan-price {
+  font-family: Ubuntu-Bold;
+  color: var(--marine-blue);
+  font-size: 1.1em;
+}
+
+#form_summary-total_price {
+  font-family: Ubuntu-Bold;
+  color: var(--purplish-blue);
+  font-size: 1.4em;
+}
+
+#form_summary-addons {
+  display: none;
+}
+
+/* Step 5 */
+#step_screen__content_5.step_screen__content--active {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.step_screen__confirm_btn {
+  background-color: var(--purplish-blue) !important;
+}

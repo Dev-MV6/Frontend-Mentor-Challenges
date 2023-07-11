@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/mobile.css">
+
+  <title>Frontend Mentor | Multi-step form</title>
+
+  <style>
+    .attribution {
+      position: absolute;
+      max-width: max-content;
+      font-size: 0.8em;
+      bottom: -40px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    @media (max-width: 1100px) {
+      #main_container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .attribution {
+        padding: 10px;
+        position: static;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main_container">
+    <div id="sidebar">
+      <div class="sidebar__step">
+        <div class="sidebar__step-indicator step_indicator--active" id="step_indicator_1">1</div>
+        <div class="sidebar__step-description">
+          <span>STEP 1</span>
+          <span>YOUR INFO</span>
+        </div>
+      </div>
+
+      <div class="sidebar__step">
+        <div class="sidebar__step-indicator" id="step_indicator_2">2</div>
+        <div class="sidebar__step-description">
+          <span>STEP 2</span>
+          <span>SELECT PLAN</span>
+        </div>
+      </div>
+
+      <div class="sidebar__step">
+        <div class="sidebar__step-indicator" id="step_indicator_3">3</div>
+        <div class="sidebar__step-description">
+          <span>STEP 3</span>
+          <span>ADD-ONS</span>
+        </div>
+      </div>
+
+      <div class="sidebar__step">
+        <div class="sidebar__step-indicator" id="step_indicator_4">4</div>
+        <div class="sidebar__step-description">
+          <span>STEP 4</span>
+          <span>SUMMARY</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="step_screen">
+      <div class="step_screen__content step_screen__content--active" id="step_screen__content_1">
+        <h1 class="step_screen__title">Personal info</h1>
+        <p class="step_screen__paragraph">Please provide your name, email address, and phone number.</p>
+
+        <div class="step_screen__form_control">
+          <div style="display: flex; justify-content: space-between;">
+            <label for="name_field">Name</label>
+            <span class="field_validation_alert">This field is required</span>
+          </div>
+          <input required name="name" id="name_field" class="step_screen__input" type="text"
+            placeholder="e.g. Stephen King">
+        </div>
+
+        <div class="step_screen__form_control">
+          <div style="display: flex; justify-content: space-between;">
+            <label for="email_field">Email Address</label>
+            <span class="field_validation_alert">This field is required</span>
+          </div>
+          <input required name="email" id="email_field" class="step_screen__input" type="email"
+            placeholder="e.g. stephenking@lorem.com">
+        </div>
+
+        <div class="step_screen__form_control">
+          <div style="display: flex; justify-content: space-between;">
+            <label for="phone_field">Phone Number</label>
+            <span class="field_validation_alert">This field is required</span>
+          </div>
+          <input required name="phone" id="phone_field" class="step_screen__input" type="tel"
+            placeholder="e.g. +1 234 567 890" pattern="[+]?([0-9]\s?){8,13}" minlength="9">
+        </div>
+      </div>
+
+      <div class="step_screen__content" id="step_screen__content_2">
+        <h1 class="step_screen__title">Select your plan</h1>
+        <p class="step_screen__paragraph">You have the option of monthly or yearly billing.</p>
+
+        <div id="step_screen__content_2__plan_selection">
+          <div class="step_screen__option_box step_screen__option_box--selected" tabindex="0" data-price="9">
+            <img class="step_screen__option_box-icon" src="./assets/images/icon-arcade.svg">
+            <div style="display: flex; flex-direction: column;">
+              <span class="step_screen__option_box-description">Arcade</span>
+              <span class="step_screen__option_box-auxiliar">$9/mo</span>
+              <span class="step_screen__option_box-extra">2 months free</span>
+            </div>
+          </div>
+
+          <div class="step_screen__option_box" tabindex="0" data-price="12">
+            <img class="step_screen__option_box-icon" src="./assets/images/icon-advanced.svg">
+            <div style="display: flex; flex-direction: column;">
+              <span class="step_screen__option_box-description">Advanced</span>
+              <span class="step_screen__option_box-auxiliar">$12/mo</span>
+              <span class="step_screen__option_box-extra">2 months free</span>
+            </div>
+          </div>
+
+          <div class="step_screen__option_box" tabindex="0" data-price="15">
+            <img class="step_screen__option_box-icon" src="./assets/images/icon-pro.svg">
+            <div style="display: flex; flex-direction: column;">
+              <span class="step_screen__option_box-description">Pro</span>
+              <span class="step_screen__option_box-auxiliar">$15/mo</span>
+              <span class="step_screen__option_box-extra">2 months free</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="step_screen__content_2__plan_billing_control">
+          <input id="billing_toggle_switch" style="display: none;" type="checkbox">
+          <label class="toggle_switch" for="billing_toggle_switch"></label>
+          <span id="billing_option-monthly" class="toggle_switch-option" tabindex="0">Monthly</span>
+          <span id="billing_option-yearly" class="toggle_switch-option" tabindex="0">Yearly</span>
+        </div>
+
+
+      </div>
+
+      <div class="step_screen__content" id="step_screen__content_3">
+        <h1 class="step_screen__title">Pick add-ons</h1>
+        <p class="step_screen__paragraph">Add-ons help enhance your gaming experience.</p>
+
+        <div id="step_screen__content_3__addons">
+          <div class="step_screen__option_box" tabindex="0" data-addon_id="1">
+            <input class="addon_checkbox" id="addon-online_service" type="checkbox" tabindex="-1">
+            <div class="addon_content">
+              <div style="display: flex; flex-direction: column">
+                <span class="step_screen__option_box-description">Online service</span>
+                <span class="step_screen__option_box-auxiliar">Access to multiplayer games</span>
+              </div>
+              <span class="step_screen__option_box-extra">+$1/mo</span>
+            </div>
+          </div>
+
+          <div class="step_screen__option_box" tabindex="0" data-addon_id="2">
+            <input class="addon_checkbox" id="addon-larger_storage" type="checkbox" tabindex="-1">
+            <div class="addon_content">
+              <div style="display: flex; flex-direction: column">
+                <span class="step_screen__option_box-description">Larger storage</span>
+                <span class="step_screen__option_box-auxiliar">Extra 1TB of cloud save</span>
+              </div>
+              <span class="step_screen__option_box-extra">+$2/mo</span>
+            </div>
+          </div>
+
+          <div class="step_screen__option_box" tabindex="0" data-addon_id="3">
+            <input class="addon_checkbox" id="addon-customizable_profile" type="checkbox" tabindex="-1">
+            <div class="addon_content">
+              <div style="display: flex; flex-direction: column">
+                <span class="step_screen__option_box-description">Customizable profile</span>
+                <span class="step_screen__option_box-auxiliar">Custom theme on your profile</span>
+              </div>
+              <span class="step_screen__option_box-extra">+$2/mo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step_screen__content" id="step_screen__content_4">
+        <h1 class="step_screen__title">Finishing up</h1>
+        <p class="step_screen__paragraph">Double-check everything looks OK before confirming.</p>
+
+        <div id="step_screen__content_4__summary">
+          <div class="form_summary-item">
+            <div style="display: flex; flex-direction: column">
+              <span id="form_summary-plan-name">Xxxx (xxxxx)</span>
+              <span id="form_summary-plan-change_btn" onclick="javascript:goToStep(2)">Change</span>
+            </div>
+            <span id="form_summary-plan-price">$00/xz</span>
+          </div>
+          <div id="form_summary-addons"></div>
+        </div>
+
+        <div class="form_summary-item">
+          <span class="form_summary-item-description">Total (per xxxx)</span>
+          <span id="form_summary-total_price">$00/xz</span>
+        </div>
+      </div>
+
+      <div class="step_screen__content" id="step_screen__content_5">
+        <img src="./assets/images/icon-thank-you.svg">
+        <h1 class="step_screen__title">Thank you!</h1>
+        <p class="step_screen__paragraph">Thanks for confirming your subscription! We hope you have fun
+          using our platform. If you ever need support, please feel free
+          to email us at support@loremgaming.com.</p>
+      </div>
+
+      <div id="step_screen__control_buttons">
+        <button type="button" id="step_screen__prev_step_btn">Go Back</button>
+        <button type="button" id="step_screen__next_step_btn">Next Step</button>
+      </div>
+    </div>
+
+    <div class="attribution">
+      <div style="display: inline-block;">Challenge by <a href="https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ" target="_blank">Frontend
+        Mentor</a>.</div>
+      <div style="display: inline-block;">Coded by <a href="https://www.frontendmentor.io/profile/Dev-MV6">Dev-MV6</a>.</div>
+    </div>
+  </div>
+  <script type="text/javascript" src="./script.js"></script>
+</body>
+
+</html>
