@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+	<link rel="stylesheet" href="./style.css">
+
+	<title>Frontend Mentor | FAQ Accordion Card</title>
+
+	<style>
+    .attribution {
+      position: absolute;
+			width: 100%;
+			max-width: max-content;
+      font-size: 1em;
+      top: 105%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      text-align: center;
+			color: var(--light-grayish-blue);
+    }
+
+    .attribution a {
+      color: var(--soft-red);
+    }
+  </style>
+</head>
+
+<body>
+	<main id="main-container">
+		<div id="illustration">
+				<div style="overflow: hidden;">
+					<img id="illustration__woman" src="images/illustration-woman-online-desktop.svg" alt="">
+				</div>
+				<img id="illustration__box" src="images/illustration-box-desktop.svg" alt="">
+		</div>
+
+		<section id="faq-items-container">
+			<h1 id="faq-card-title">FAQ</h1>
+			<div class="faq-item">
+				<div class="faq-item__title-container">
+					<span class="faq-item__title">How many team members can I invite?</span>
+					<img class="faq-item__arrow-icon" src="images/icon-arrow-down.svg" alt="">
+				</div>
+				<p class="faq-item__content">You can invite up to 2 additional users on the Free plan. There is no limit on team
+					members for the Premium plan.</p>
+			</div>
+
+			<hr class="faq-item-divider">
+
+			<div class="faq-item  faq-item--active">
+				<div class="faq-item__title-container">
+					<span class="faq-item__title">What is the maximum file upload size?</span>
+					<img class="faq-item__arrow-icon" src="images/icon-arrow-down.svg" alt="">
+				</div>
+				<p class="faq-item__content">No more than 2GB. All files in your account must fit your allotted storage space.
+				</p>
+			</div>
+
+			<hr class="faq-item-divider">
+
+			<div class="faq-item">
+				<div class="faq-item__title-container">
+					<span class="faq-item__title"> How do I reset my password?</span>
+					<img class="faq-item__arrow-icon" src="images/icon-arrow-down.svg" alt="">
+				</div>
+				<p class="faq-item__content">Click “Forgot password” from the login page or “Change password” from your profile
+					page. A reset link will be emailed to you.</p>
+			</div>
+
+			<hr class="faq-item-divider">
+
+			<div class="faq-item">
+				<div class="faq-item__title-container">
+					<span class="faq-item__title">Can I cancel my subscription?</span>
+					<img class="faq-item__arrow-icon" src="images/icon-arrow-down.svg" alt="">
+				</div>
+				<p class="faq-item__content">Yes! Send us a message and we'll process your request no questions asked.</p>
+			</div>
+
+			<hr class="faq-item-divider">
+
+			<div class="faq-item">
+				<div class="faq-item__title-container">
+					<span class="faq-item__title"> Do you provide additional support?</span>
+					<img class="faq-item__arrow-icon" src="images/icon-arrow-down.svg" alt="">
+				</div>
+				<p class="faq-item__content">Chat and email support is available 24/7. Phone lines are open during normal
+					business hours.</p>
+			</div>
+
+			<hr class="faq-item-divider">
+
+		</section>
+		<div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io/challenges/faq-accordion-card-XlyjD0Oam" target="_blank">Frontend Mentor</a>.
+			Solved by <a href="https://www.frontendmentor.io/profile/Dev-MV6">Dev-MV6</a>.
+    </div>
+	</main>
+	<script src="script.js"></script>
+</body>
+</html>

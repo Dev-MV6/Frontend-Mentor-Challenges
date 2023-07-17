@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css	2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+:root {
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  --light-grayish-blue: hsl(240, 5%, 91%);
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+}
+
+*::selection {
+  background-color: var(--soft-red);
+  color: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kumbh Sans', sans-serif;
+  color: var(--very-dark-desaturated-blue);
+}
+
+body {
+  background: linear-gradient(var(--soft-violet), var(--soft-blue), var(--soft-blue), var(--soft-violet));
+  background-size: 100% 200%;
+  background-position-y: 0%;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  animation: gradient 5s infinite ease-in-out alternate;
+}
+
+@keyframes gradient {
+  0% {
+    background-position-y: 0%;
+  }
+
+  100% {
+    background-position-y: 100%;
+  }
+}
+
+#main-container {
+  background: #fff;
+  border-radius: 20px;
+  width: 900px;
+  height: 500px;
+  display: flex;
+  position: relative;
+  box-shadow: 0px 35px 60px #0005;
+  background-image: url(images/bg-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: -575px 66%;
+  margin: 30px;
+}
+
+/* Illustration */
+#illustration {
+  user-select: none;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  width: 392px;
+  transform: translateY(0px);
+  animation: illustration-appear 0.7s;
+}
+
+@keyframes illustration-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+#illustration__woman {
+  transform: translateX(-80px);
+}
+
+#illustration__box {
+  position: absolute;
+  bottom: 110px;
+  left: -93px;
+  filter: drop-shadow(0px 15px 10px #0003);
+  animation: floating 2s ease-in-out infinite alternate;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+
+/* FAQ items */
+#faq-items-container {
+  width: 100%;
+  margin: 60px 80px;
+}
+
+#faq-card-title {
+  margin-bottom: 40px;
+  font-size: 2.5em;
+}
+
+.faq-item {
+  margin: 15px 0;
+  width: 100%;
+}
+
+.faq-item--active .faq-item__title {
+  font-weight: 700;
+}
+
+.faq-item--active .faq-item__content {
+  display: block;
+}
+
+.faq-item--active .faq-item__arrow-icon {
+  transform: rotate(180deg);
+}
+
+.faq-item__title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.faq-item__title {
+  color: var(--very-dark-grayish-blue);
+  pointer-events: none;
+  transition: color 0.2s;
+}
+
+.faq-item__title-container:hover > .faq-item__title {
+  color: var(--soft-red);
+}
+
+.faq-item__arrow-icon {
+  margin: 0 10px;
+  pointer-events: none;
+  transition: transform 0.2s ease;
+}
+
+.faq-item__content {
+  color: var(--dark-grayish-blue);
+  font-size: 12px;
+  margin-top: 10px;
+  margin-right: 40px;
+  display: none;
+  overflow: hidden;
+  opacity: 0;
+  animation: faq-item__content-appear 0.5s ease forwards;
+}
+
+@keyframes faq-item__content-appear {
+  0% {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+.faq-item-divider {
+  border: none;
+  border-top: solid 1px var(--light-grayish-blue);
+}
+
+/* Mobile design */
+@media (max-width: 900px) {
+  body {
+    background: linear-gradient(var(--soft-violet), var(--soft-blue));
+    animation: none;
+  }
+
+  #main-container {
+    margin-top: 140px;
+    margin-bottom: 90px;
+    background-image: url(images/bg-pattern-mobile.svg);
+    background-position: 50% 0;
+    padding-top: 80px;
+    height: fit-content;
+    max-width: 600px;
+  }
+
+  #illustration {
+    width: auto;
+    position: absolute;
+    transform: scale(50%) translate(-100%, -100%);
+    top: -18px;
+    left: 50%;
+    animation: illustration-appear--mobile 0.7s;
+  }
+
+  @keyframes illustration-appear--mobile {
+    0% {
+      opacity: 0;
+      transform: scale(50%) translate(-100%, -80%);
+    }
+
+    100% {
+      transform: scale(50%) translate(-100%, -100%);
+      opacity: 1;
+    }
+  }
+
+  #illustration__woman {
+    transform: none;
+  }
+
+  #faq-card-title {
+    text-align: center;
+  }
+
+  #illustration__box {
+    position: absolute;
+    bottom: 40px;
+    left: -10px;
+  }
+
+  #faq-items-container {
+    margin: 40px;
+  }
+}
