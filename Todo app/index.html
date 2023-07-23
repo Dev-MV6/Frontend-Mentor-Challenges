@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/mobile.css" />
+
+    <title>Frontend Mentor | Todo app</title>
+
+    <style>
+      .attribution {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        max-width: max-content;
+        font-size: 0.9em;
+        text-align: center;
+        color: var(--text-color);
+        margin: 30px auto 0 auto;
+        width: 100%;
+        padding: 10px 40px;
+      }
+
+      .attribution div {
+        margin-top: 3px;
+      }
+
+      .attribution a {
+        text-decoration: none;
+        position: relative;
+        color: #57ddff;
+        background: linear-gradient(-45deg, #c058f3, #57ddff);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .attribution a::after {
+        content: '';
+        display: none;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(-45deg, #c058f3, #57ddff);
+      }
+
+      .attribution a:hover::after {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body class="dark">
+    <header class="background-banner"></header>
+
+    <main class="main-container">
+      <header class="main-container__header">
+        <div class="alert">This is an alert message</div>
+        <h1 class="title">TODO</h1>
+        <div class="toggle-theme-btn"></div>
+      </header>
+
+      <form>
+        <div class="new-todo-bar">
+          <button class="add-btn" type="submit" aria-label="Add todo">
+            <svg class="add-btn__icon-plus" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="26" height="26">
+              <path
+                d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"
+              />
+            </svg>
+          </button>
+          <input
+            class="new-todo-bar__text-field"
+            type="text"
+            placeholder="Create a new todo..."
+            autocomplete="off"
+            spellcheck="true"
+          />
+        </div>
+      </form>
+
+      <div class="todos-view">
+        <div class="todos-view__main-container">
+          <ul class="todo-list">
+            <div class="todo-list__inset-shadow">
+              <!-- Shadow effect added to container while reordering children (expected to be ignored by Slip library) -->
+            </div>
+            <!-- Todo items go here -->
+          </ul>
+
+          <div class="todos-view__bottom-bar">
+            <span class="todos-view__items-left">0 items left</span>
+            <!-- Desktop filter list -->
+            <div class="filter-list filter-list--desk">
+              <input
+                id="filter-radio_all--desk"
+                class="filter-radio"
+                type="radio"
+                name="filter"
+                value="all"
+                autocomplete="off"
+                checked
+              />
+              <label class="filter-label" for="filter-radio_all--desk">All</label>
+
+              <input
+                id="filter-radio_active--desk"
+                class="filter-radio"
+                type="radio"
+                name="filter"
+                value="active"
+                autocomplete="off"
+              />
+              <label class="filter-label" for="filter-radio_active--desk">Active</label>
+
+              <input
+                id="filter-radio_completed--desk"
+                class="filter-radio"
+                type="radio"
+                name="filter"
+                value="completed"
+                autocomplete="off"
+              />
+              <label class="filter-label" for="filter-radio_completed--desk">Completed</label>
+            </div>
+            <span class="todos-view__clear-completed-btn">Clear Completed</span>
+          </div>
+        </div>
+
+        <!-- Filter list for mobile design -->
+        <div class="filter-list-mobile-container">
+          <!-- Mobile filter list -->
+          <div class="filter-list filter-list--mobile">
+            <input
+              id="filter-radio_all--mobile"
+              class="filter-radio"
+              type="radio"
+              name="filter--mobile"
+              value="all"
+              autocomplete="off"
+              checked
+            />
+            <label class="filter-label" for="filter-radio_all--mobile">All</label>
+
+            <input
+              id="filter-radio_active--mobile"
+              class="filter-radio"
+              type="radio"
+              name="filter--mobile"
+              value="active"
+              autocomplete="off"
+            />
+            <label class="filter-label" for="filter-radio_active--mobile">Active</label>
+
+            <input
+              id="filter-radio_completed--mobile"
+              class="filter-radio"
+              type="radio"
+              name="filter--mobile"
+              value="completed"
+              autocomplete="off"
+            />
+            <label class="filter-label" for="filter-radio_completed--mobile">Completed</label>
+          </div>
+        </div>
+
+        <p class="helper-text">
+          Use the handle <img src="./images/icon-handle.svg" alt="" draggable="false" /> to reorder the list
+        </p>
+      </div>
+
+      <div class="attribution">
+        <div>
+          Challenge by
+          <a href="https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW" target="_blank">Frontend Mentor</a>.&nbsp;
+        </div>
+        <div>Coded by <a href="https://www.frontendmentor.io/profile/Dev-MV6">Dev-MV6</a>.</div>
+      </div>
+    </main>
+
+    <script src="./slip.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

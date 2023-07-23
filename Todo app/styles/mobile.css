@@ -1,0 +1,32 @@
+/* Mobile design */
+@media (max-width: 560px) {
+  .background-banner {
+    background-image: url(../images/bg-mobile-dark.jpg);
+  }
+
+  .background-banner.background-banner--light {
+    background-image: url(../images/bg-mobile-light.jpg);
+  }
+
+  .filter-list--desk {
+    display: none;
+  }
+
+  .filter-list-mobile-container {
+    display: block;
+  }
+}
+
+@media (hover: none) {
+  /* Touch screen devices */
+  .todo-list__item__icon-delete {
+    display: inline;
+  }
+}
+
+@media (min-width: 560px) {
+  .filter-list-mobile-container {
+    /* Never display in desktop mode */
+    display: none !important;
+  }
+}

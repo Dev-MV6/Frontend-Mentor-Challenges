@@ -1,0 +1,445 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+/* Themes */
+:root {
+  /* Dark theme by default */
+  --background-color: #161722;
+  --background-color_secondary: #25273c;
+  --text-color: #cacde8;
+  --text-color-light: #777a92;
+  --text-color_hover: #e4e5f1;
+  --border-color: #393a4c;
+  --active-blue: #5f8ce7;
+  --transition-duration: 400ms;
+  --alert-transition-duration: 300ms;
+}
+
+.light {
+  --background-color: #fafafa;
+  --background-color_secondary: #ffffff;
+  --text-color: #484b6a;
+  --text-color_hover: #484b6a;
+  --border-color: #ecebef;
+}
+
+.dark {
+  --background-color: #161722;
+  --background-color_secondary: #25273c;
+  --text-color: #cacde8;
+  --text-color_hover: #e4e5f1;
+  --border-color: #393a4c;
+}
+
+::selection {
+  color: var(--background-color_secondary);
+  background-color: var(--active-blue);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Josefin Sans', sans-serif;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 30px;
+  padding-bottom: 30px;
+  font-size: 16px;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  transition: none;
+}
+
+.body--transition-enabled {
+  transition: background-color var(--transition-duration) ease-in-out;
+}
+
+.body--transition-enabled * {
+  transition: background-color var(--transition-duration) ease-in-out, color var(--transition-duration) ease-in-out,
+    border-bottom-color var(--transition-duration) ease-in-out, fill var(--transition-duration) ease-in-out;
+}
+
+.background-banner {
+  position: absolute;
+  height: 300px;
+  width: 100%;
+  background-image: url(../images/bg-desktop-dark.jpg);
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 1;
+  transition: opacity var(--transition-duration) ease-in-out;
+  z-index: -1;
+}
+
+.background-banner.background-banner--light {
+  background-image: url(../images/bg-desktop-light.jpg);
+}
+
+.main-container {
+  width: 100%;
+  max-width: 520px;
+  margin-top: 80px;
+}
+
+.main-container__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  color: #fff;
+}
+
+.alert {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  max-width: 340px;
+  padding: 10px 20px;
+  padding-right: 30px;
+  margin-bottom: 10px;
+  color: var(--text-color);
+  background-color: var(--background-color_secondary);
+  border-radius: 5px;
+  box-shadow: 0 0 10px #0004;
+  transform: translateX(-110%); /* hidden by default */
+  transition: background-color var(--transition-duration) ease-in-out, color var(--transition-duration) ease-in-out,
+    transform var(--alert-transition-duration) ease;
+  z-index: 9999999;
+}
+
+.alert--visible {
+  transform: translateX(0%); /* slide-in */
+}
+
+.title {
+  font-size: 35px;
+  letter-spacing: 15px;
+  line-height: 35px;
+}
+
+.toggle-theme-btn {
+  min-height: 26px;
+  min-width: 26px;
+  background-image: url(../images/icon-sun.svg);
+  cursor: pointer;
+}
+
+.light .toggle-theme-btn {
+  background-image: url(../images/icon-moon.svg);
+}
+
+/* New todo bar */
+.new-todo-bar {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  width: 100%;
+  padding: 0 20px;
+  margin-top: 45px;
+  background-color: var(--background-color_secondary);
+  border-radius: 5px;
+}
+
+.add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 26px;
+  min-height: 26px;
+  width: 26px;
+  min-width: 26px;
+  margin-right: 20px;
+  background: var(--border-color);
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.add-btn:focus-visible {
+  outline: 2px solid var(--active-blue);
+  outline-offset: 2px;
+}
+
+.add-btn__icon-plus {
+  fill: var(--text-color);
+  pointer-events: none;
+  transform: scale(0.5);
+}
+
+.new-todo-bar__text-field {
+  height: 25px;
+  width: 100%;
+  font-size: 1em;
+  color: var(--text-color);
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.new-todo-bar__text-field::placeholder {
+  opacity: 0.5;
+}
+
+/* Todo item list view */
+.todos-view {
+  display: none;
+  margin-top: 25px;
+}
+
+.todos-view__main-container {
+  background-color: var(--background-color_secondary);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.todos-view__main-container,
+.filter-list-mobile-container {
+  box-shadow: 0 10px 40px #0002;
+}
+
+.todo-list {
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 200ms ease-in-out;
+}
+
+/* inset shadow effect for todo list container while reordering items */
+.todo-list__inset-shadow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
+  transition: box-shadow 200ms ease-in-out;
+  z-index: 999999;
+}
+
+/* `.slip-container-reordering`: custom class added to the todo list container while its children are being reordered */
+.todo-list.slip-container-reordering > .todo-list__inset-shadow {
+  box-shadow: inset 0px 10px 10px -8px #0007, inset 0px -10px 10px -8px #0007;
+}
+
+.todo-list__item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  min-height: 67px;
+  width: 100%;
+  padding: 20px;
+  background-color: var(--background-color_secondary);
+  border-bottom: 1px solid var(--border-color);
+  overflow-wrap: anywhere;
+  transition: background-color var(--transition-duration) ease-in-out, color var(--transition-duration) ease-in-out,
+    border-bottom-color var(--transition-duration) ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* `.slip-reordering`: class added by slip to elements while they are being reordered inside the container */
+.todo-list__item.slip-reordering {
+  border-bottom: none;
+  box-shadow: 0 0 10px #0004;
+}
+
+.todo-list__item__icon-check {
+  position: relative;
+  height: 26px;
+  min-height: 26px;
+  width: 26px;
+  min-width: 26px;
+  margin-right: 20px;
+  background: var(--border-color);
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+/* inner circle with background color */
+.todo-list__item__icon-check::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 22px;
+  width: 22px;
+  background: var(--background-color_secondary);
+  border-radius: 50%;
+  content: '';
+  transform: translate(-50%, -50%);
+}
+
+.body--transition-enabled .todo-list__item__icon-check::before {
+  transition: background var(--transition-duration) ease-in-out;
+}
+
+.todo-list__item__icon-check:hover {
+  background: linear-gradient(-45deg, #c058f3, #57ddff);
+}
+
+.todo-list__item__description {
+  width: 100%;
+  color: var(--text-color);
+}
+
+.todo-list__item__icon-delete {
+  display: none;
+  margin-left: 20px;
+  cursor: pointer;
+}
+
+.todo-list__item:hover .todo-list__item__icon-delete {
+  display: block;
+}
+
+.todo-list__item__icon-handle {
+  margin-left: 20px;
+  cursor: grab;
+}
+
+/* hide handle when the list contains only one item */
+.todo-list .todo-list__item:only-of-type .todo-list__item__icon-handle {
+  display: none;
+}
+
+.slip-reordering .todo-list__item__icon-handle {
+  cursor: grabbing;
+}
+
+.light .todo-list__item__icon-delete {
+  opacity: 0.5;
+}
+
+/* Completed todo item styles */
+.todo-list__item--completed .todo-list__item__icon-check {
+  background: linear-gradient(-45deg, hsl(280, 87%, 65%), hsl(192, 100%, 67%));
+}
+
+.todo-list__item--completed .todo-list__item__icon-check::before {
+  display: none;
+}
+
+/* icon check mark  */
+.todo-list__item--completed .todo-list__item__icon-check::after {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: url(../images/icon-check.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  content: '';
+}
+
+.todo-list__item--completed .todo-list__item__description {
+  text-decoration: line-through;
+  opacity: 0.3;
+}
+
+/* Bottom bar */
+.todos-view__bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  height: 50px;
+  width: 100%;
+  padding: 0 20px;
+  font-size: 0.9em;
+  color: var(--text-color-light);
+}
+
+.filter-list {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  align-self: center;
+  list-style: none;
+  transform: translate(-50%, -50%);
+}
+
+.filter-radio {
+  display: none;
+}
+
+.filter-label {
+  margin: 0 10px;
+}
+
+/* No filter selected */
+.todos-view:not(.todos-view--filtered) .filter-radio[value='all'] + .filter-label {
+  /* Highlight default radio label for both designs (desktop & mobile) */
+  color: var(--active-blue);
+}
+
+.filter-label,
+.todos-view__clear-completed-btn {
+  transition: color 0.2s;
+}
+
+.filter-label:hover,
+.todos-view__clear-completed-btn:hover {
+  color: var(--text-color_hover);
+  cursor: pointer;
+}
+
+.filter-list-mobile-container {
+  display: none;
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: var(--text-color-light);
+  background: var(--background-color_secondary);
+  border-radius: 5px;
+}
+
+.helper-text {
+  width: 100%;
+  max-width: max-content;
+  margin: 45px auto 0 auto;
+  color: var(--text-color-light);
+  text-align: center;
+  pointer-events: none;
+}
+
+.helper-text img {
+  position: relative;
+  top: 1.5px;
+  height: 13px;
+  margin: 0 3px;
+}
+
+/* Todo list filters */
+/* Hide item icon handle to prevent list reordering */
+.todos-view--filtered .todo-list__item__icon-handle {
+  display: none;
+}
+
+/* Filter: Active items (hide completed items) */
+.todos-view--filtered_active .filter-radio[value='active'] + .filter-label {
+  /* Highlight selected filter labels for both designs (desktop & mobile) */
+  color: var(--active-blue) !important;
+}
+
+.todos-view--filtered_active .todo-list__item--completed {
+  display: none !important;
+}
+
+/* Filter: Completed items (hide active items) */
+.todos-view--filtered_completed .filter-radio[value='completed'] + .filter-label {
+  /* Highlight selected filter labels for both designs (desktop & mobile) */
+  color: var(--active-blue) !important;
+}
+
+.todos-view--filtered_completed .todo-list__item:not(.todo-list__item--completed) {
+  display: none !important;
+}
