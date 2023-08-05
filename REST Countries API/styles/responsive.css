@@ -1,0 +1,113 @@
+@media (max-width: 1200px) {
+  .country-details-flag {
+    width: 100%;
+    margin-right: 40px;
+  }
+
+  .country-details {
+    min-width: 340px;
+    margin: 40px;
+  }
+
+  .country-details__items {
+    flex-direction: column;
+  }
+
+  .country-details__items .country-details__item-list:first-child {
+    margin: 0;
+    margin-bottom: 10px;
+  }
+
+  .country-details__border-countries {
+    margin-top: 20px;
+  }
+
+  .country-details__border-countries b:first-child {
+    /* Border Countries item description */
+    width: 100%;
+    margin-bottom: 5px;
+  }
+}
+
+@media (max-width: 1070px) {
+  .country-card__info--back {
+    flex-direction: column;
+    justify-content: start;
+  }
+
+  .country-details {
+    width: 100%;
+    min-width: auto;
+    max-width: 500px;
+    margin: 0;
+  }
+
+  .country-details-flag {
+    max-width: 500px;
+    margin: 80px 0 40px 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .close-button {
+    position: static;
+    width: 100%;
+  }
+
+  .country-details-flag {
+    margin: 20px 0;
+  }
+
+  .main-container__toolbar {
+    flex-wrap: wrap;
+  }
+
+  .search-box {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 660px) {
+  .theme-changer__icon {
+    min-height: 20px;
+    min-width: 20px;
+    margin: 5px;
+  }
+
+  .theme-changer__description {
+    display: none;
+  }
+
+  .main-container {
+    padding-top: 30px;
+  }
+
+  .non-sovereign-states-checkbox-container {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 620px) {
+  .navbar,
+  .main-container,
+  .country-card__info--back {
+    padding: 30px;
+  }
+
+  .country-details-flag {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+  .non-sovereign-states-checkbox-container {
+    width: 100%;
+  }
+
+  .region-filter {
+    width: 100%;
+    margin-top: 10px;
+  }
+}

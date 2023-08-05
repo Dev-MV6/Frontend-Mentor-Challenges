@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/responsive.css">
+
+  <title>Frontend Mentor | REST Countries API</title>
+
+  <style>
+    .attribution {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      background-color: var(--background-color_secondary);
+      box-shadow: var(--box-shadow);
+      margin: 10px;
+      padding: 20px;
+      border-radius: 3px;
+    }
+
+    .attribution a {
+      color: var(--blue);
+    }
+
+    .dark .attribution a {
+      color: #4ea7fa;
+    }
+
+    @media (max-width: 520px) {
+      .attribution {
+        width: 100%;
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+
+<body class="light">
+  <nav class="navbar l-flex-rsb">
+    <h1 class="navbar__title">Where in the world?</h1>
+    <div class="theme-changer" tabindex="0">
+      <div class="theme-changer__icon"></div>
+      <span class="theme-changer__description">Dark Mode</span>
+    </div>
+  </nav>
+  <main class="main-container">
+    <div class="main-container__toolbar">
+      <!-- Search by name -->
+      <div class="search-box">
+        <img class="search-box__icon search-box__icon--search" src="./images/icon-search.svg" alt="" draggable="false">
+        <input class="search-box__input" type="text" placeholder="Search for a country..." autocomplete="off">
+        <img class="search-box__icon search-box__icon--clear" src="./images/icon-cross-clear.svg" alt=""
+          draggable="false" tabindex="0">
+      </div>
+
+      <!-- Include non-sovereign states? -->
+      <div class="non-sovereign-states-checkbox-container" title="Include Non-Sovereign States"
+        aria-label="Include Non-Sovereign States" tabindex="0" role="checkbox" aria-checked="false">
+        <input type="checkbox" role="presentation" id="non-sovereign-states-checkbox" tabindex="-1">
+        <label for="non-sovereign-states-checkbox" role="presentation">Non-Sovereign States</label>
+      </div>
+
+      <!-- Filter by region -->
+      <div class="region-filter">
+        <div class="region-filter__select l-flex-rsb" tabindex="0" aria-expanded="false" role="button">
+          <span class="region-filter__description">Filter by Region</span>
+          <img class="region-filter__arrow-icon" src="./images/icon-arrow-down.svg" alt="" draggable="false">
+        </div>
+
+        <div class="region-filter__options">
+          <a class="region-filter__option" href="#">All</a>
+          <a class="region-filter__option" href="#">Africa</a>
+          <a class="region-filter__option" href="#">Americas</a>
+          <a class="region-filter__option" href="#">Asia</a>
+          <a class="region-filter__option" href="#">Europe</a>
+          <a class="region-filter__option" href="#">Oceania</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="country-cards" data-include-non-sovereign-states="false">
+      <div class="country-cards__backdrop"></div>
+      <div class="country-cards__note">Loading countries...</div>
+      <!-- Country cards go here -->
+    </div>
+
+    <div class="attribution" style="display: flex; flex-wrap: wrap; justify-content: center;">
+      <div>
+        Challenge by
+        <a href="https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca"
+          target="_blank">Frontend Mentor</a>.&nbsp;
+      </div>
+      <div>Coded by <a href="https://www.frontendmentor.io/profile/Dev-MV6">Dev-MV6</a>.</div>
+    </div>
+  </main>
+  <script src="./scripts/ISO-3166.js"></script>
+  <script src="./scripts/main.js"></script>
+</body>
+
+</html>
