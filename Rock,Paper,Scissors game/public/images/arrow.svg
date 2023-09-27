@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   viewBox="0 0 113.98068 16.419289"
+   width="113.98067"
+   height="16.419289"
+   id="svg4"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <!-- svg-source:excalidraw -->
+  <defs
+     id="defs1" />
+  <g
+     stroke-linecap="round"
+     id="g4"
+     transform="matrix(0.65598234,0.017342,-0.017342,0.65598234,-6.2822603,-1.6395828)"
+     style="fill:none;fill-opacity:1;stroke:#dddddd;stroke-opacity:1">
+    <g
+       transform="translate(181.34616,10)"
+       id="g1"
+       style="fill:none;fill-opacity:1;stroke:#dddddd;stroke-opacity:1">
+      <path
+         d="M 0,0 C -28.56,0.98 -142.79,4.88 -171.35,5.86"
+         stroke="#1e1e1e"
+         stroke-width="4.5"
+         fill="none"
+         stroke-dasharray="8, 12"
+         id="path1"
+         style="fill:none;fill-opacity:1;stroke:#dddddd;stroke-opacity:1" />
+    </g>
+    <g
+       transform="translate(181.34616,10)"
+       id="g2"
+       style="fill:none;fill-opacity:1;stroke:#dddddd;stroke-opacity:1">
+      <path
+         d="M -27.82,11.22 C -18.48,7.45 -9.14,3.68 0,0"
+         stroke="#1e1e1e"
+         stroke-width="4.5"
+         fill="none"
+         id="path2"
+         style="fill:none;fill-opacity:1;stroke:#dddddd;stroke-opacity:1" />
+    </g>
+    <g
+       transform="translate(181.34616,10)"
+       id="g3"
+       style="fill:none;fill-opacity:1;stroke:#dddddd;stroke-opacity:1">
+      <path
+         d="M -28.52,-9.29 C -18.95,-6.17 -9.37,-3.05 0,0"
+         stroke="#1e1e1e"
+         stroke-width="4.5"
+         fill="none"
+         id="path3"
+         style="fill:none;fill-opacity:1;stroke:#dddddd;stroke-opacity:1" />
+    </g>
+  </g>
+  <mask
+     id="mask4" />
+</svg>

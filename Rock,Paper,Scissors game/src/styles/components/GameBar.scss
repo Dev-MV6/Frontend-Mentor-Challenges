@@ -1,0 +1,106 @@
+$border-color: hsl(217, 16%, 45%);
+
+.game-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.25em 1.875em;
+  margin-top: 20px;
+  border: 3px solid $border-color;
+  border-radius: 1em;
+  text-transform: uppercase;
+
+  .game-bar__logo {
+    height: 6.2em;
+    margin-right: 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: transform 250ms ease-in-out;
+    transition-delay: 100ms;
+
+    @media (hover: hover) {
+      &:hover {
+        transform: rotateZ(-3deg) scale(1.08);
+        transition-delay: 0ms;
+      }
+    }
+
+    &:focus-visible {
+      outline: dashed 2.4px #fff;
+      outline-offset: 0.6em;
+    }
+  }
+}
+
+// Game score
+.game-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 10px 2.8125em;
+  background-color: #fff;
+  border: 2px solid #fff;
+  border-radius: 0.5em;
+
+  .game-score__title {
+    font-size: 1.125em;
+    color: hsl(229, 64%, 46%);
+    letter-spacing: 2px;
+  }
+
+  .game-score__points {
+    opacity: 0.9;
+    height: 100%;
+    font-size: 3.8em;
+    color: var(--text-color-dark);
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      cursor: pointer;
+      background: transparent;
+      border: 2px solid var(--red);
+
+      * {
+        visibility: hidden;
+      }
+
+      &::after {
+        content: 'Reset';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        font-size: 1.4em;
+        color: var(--red);
+        text-align: center;
+        transform: translate(-50%, -50%);
+      }
+
+      &:active {
+        background-color: var(--red);
+
+        &::after {
+          color: #000;
+        }
+      }
+    }
+  }
+
+  &:focus-visible {
+    outline: dashed 2.4px var(--red);
+    outline-offset: 0.6em;
+
+    &::before {
+      content: 'Press Enter to reset';
+      position: absolute;
+      bottom: -3em;
+      font-size: 1em;
+      width: max-content;
+      color: var(--red);
+    }
+  }
+}

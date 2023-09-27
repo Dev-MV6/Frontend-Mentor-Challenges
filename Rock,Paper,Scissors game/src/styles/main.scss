@@ -1,0 +1,12 @@
+:root {
+  --text-color-dark: hsl(229, 25%, 31%);
+  --red: hsl(347, 74%, 52%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none;
+}

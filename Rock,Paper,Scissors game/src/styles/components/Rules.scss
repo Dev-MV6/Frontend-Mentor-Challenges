@@ -1,0 +1,140 @@
+$mobile-vw: 520px;
+
+.rules-modal {
+  padding: 30px 35px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+  border-radius: 10px;
+  width: 410px;
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .rules-modal__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .rules-modal__title {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 32px;
+      color: var(--text-color-dark);
+      font-weight: 800;
+      margin-bottom: 45px;
+
+      .close-rules-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+
+        &:focus-visible {
+          outline: dotted 0.2em #000;
+          outline-offset: 0.4em;
+        }
+      }
+    }
+
+    .rules-modal__rules-img {
+      width: 100%;
+    }
+  }
+}
+
+.show-rules-btn {
+  position: absolute;
+  right: 30px;
+  bottom: 30px;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  font-family: 'Barlow Semi Condensed';
+  border-radius: 0.5em;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: color ease-in-out 0.2s, background ease-in-out 0.2s;
+  width: 8em;
+  height: 2.5em;
+
+  @media (max-width: $mobile-vw) {
+    right: 50%;
+    transform: translateX(50%);
+
+    .playground[data-round-animation-step] ~ & {
+      display: none; // Hide while a game round is on course (only mobile design)
+    }
+  }
+
+  &:hover {
+    color: var(--text-color-dark);
+    background-color: #fff;
+  }
+
+  &:focus-visible {
+    @extend :hover;
+    outline: dashed 0.15em #fff;
+    outline-offset: 0.4em;
+  }
+}
+
+@media (max-width: $mobile-vw) {
+  .rules-modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    max-width: none;
+    max-height: none;
+
+    &[open] {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .rules-modal__content {
+      flex-grow: 1;
+      margin-top: 60px;
+
+      .rules-modal__title {
+        justify-content: center;
+
+        @media (max-height: 600px) {
+          margin-top: 10px;
+        }
+      }
+
+      .rules-modal__rules-img {
+        transform: translateY(20%);
+        .bonus & {
+          transform: translateY(10%);
+        }
+        max-width: 300px;
+      }
+
+      .close-rules-btn {
+        font-size: 16px;
+        position: absolute;
+        width: 8em;
+        scale: (1.2);
+        bottom: 35px;
+      }
+    }
+  }
+
+  .show-rules-btn {
+    bottom: 30px;
+  }
+
+  .attribution[aria-expanded='true'] ~ .show-rules-btn {
+    bottom: 90px;
+  }
+}
