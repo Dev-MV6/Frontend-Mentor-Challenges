@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="build.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet" />
+
+    <title>Frontend Mentor | Profile card component</title>
+  </head>
+  <body
+    class="bg-dark-cyan bg-bodyPattern bg-no-repeat min-h-screen font-['Kumbh_Sans'] flex flex-col items-center justify-center bg-[length:540px,_640px] mobile:bg-mobileBodyPattern laptop:bg-laptopBodyPattern mobile:bg-[length:978px]"
+  >
+    <main
+      class="rounded-2xl text-center bg-white w-[326px] mobile:w-[350px] h-[375px] relative overflow-hidden shadow-[0_45px_80px_-15px_hsla(229,_23%,_23%,_0.4)]"
+    >
+      <div class="h-[141px] w-full bg-[url('./images/bg-pattern-card.svg')] absolute bg-cover bg-center"></div>
+      <img
+        class="mx-auto rounded-full ring-[5px] ring-white relative mt-[5.8rem]"
+        src="./images/image-victor.jpg"
+        alt="Victor Crest Profile Picture"
+      />
+      <div class="mt-[1.4rem]">
+        <span class="text-lg font-bold text-very-dark-desaturated-blue">Victor Crest</span>
+        <span class="text-lg text-dark-grayish-blue ml-[0.3rem]">26</span>
+      </div>
+      <span class="text-sm text-dark-grayish-blue">London</span>
+
+      <hr class="mt-6 border-t-[#ddd] border-b-0" />
+
+      <div class="flex justify-evenly py-5 px-6">
+        <div class="w-1/3">
+          <span class="block text-lg font-bold text-very-dark-desaturated-blue">80K</span>
+          <span class="block text-dark-gray text-[0.7rem] tracking-widest">Followers</span>
+        </div>
+        <div class="w-1/3">
+          <span class="block text-lg font-bold text-very-dark-desaturated-blue">803K</span>
+          <span class="block text-dark-gray text-[0.7rem] tracking-widest">Likes</span>
+        </div>
+        <div class="w-1/3">
+          <span class="block text-lg font-bold text-very-dark-desaturated-blue">1.4K</span>
+          <span class="block text-dark-gray text-[0.7rem] tracking-widest">Photos</span>
+        </div>
+      </div>
+    </main>
+
+    <div class="bottom-7 text-center text-very-dark-desaturated-blue text-[0.942rem] fixed px-6">
+      <span class="inline-block">
+        Challenge by
+        <a
+          class="underline text-white"
+          href="https://www.frontendmentor.io/challenges/profile-card-component-cfArpWshJ"
+          target="_blank"
+          >Frontend Mentor</a
+        >.
+      </span>
+      <span class="inline-block"
+        >Coded by <a class="underline text-white" href="https://www.frontendmentor.io/profile/Dev-MV6">Dev-MV6</a>.</span
+      >
+    </div>
+  </body>
+</html>
