@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="build.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap" rel="stylesheet" />
+
+    <title>Frontend Mentor | Stats preview card component</title>
+  </head>
+  <body class="bg-very-dark-blue flex justify-center items-center min-h-screen p-6 flex-col">
+    <div
+      class="bg-dark-desaturated-blue text-[15px] mobile:h-[446px] mobile:max-w-none max-w-[327px] rounded-lg font-['Inter'] mobile:flex shadow-[0_10px_15px_#ffffff04] overflow-hidden"
+    >
+      <div class="bg-soft-violet select-none mobile:order-1">
+        <img
+          class="opacity-75 mix-blend-multiply mobile:h-full"
+          srcset="./images/image-header-mobile.jpg 654w, ./images/image-header-desktop.jpg 540w"
+          sizes="(max-width: 1200px) 654px, 540px"
+          src="./images/image-header-desktop.jpg"
+          alt=""
+          draggable="false"
+        />
+      </div>
+
+      <div class="p-8 mobile:p-[4.54rem] flex-1 mx-auto max-w-[570px] text-center mobile:text-left">
+        <h1 class="text-white mt-3 mobile:mt-0 text-[1.75rem] !leading-[1.2] font-bold mobile:text-4xl">
+          Get <span class="text-soft-violet">insights</span> that help your business grow.
+        </h1>
+
+        <div class="mobile:w-[350px]">
+          <p class="mt-4 mobile:mt-[1.63rem] text-slightly-transparent-white-75 leading-6">
+            Discover the benefits of data analytics and make better decisions regarding revenue, customer experience, and overall
+            efficiency.
+          </p>
+
+          <div class="justify-between mt-8 space-y-7 mobile:flex mobile:space-y-0 mobile:mt-[4.4rem]">
+            <div>
+              <span class="block text-white text-[1.53rem] font-bold">10k+</span>
+              <span class="block font-['Lexend_Deca'] uppercase text-slightly-transparent-white-60 mt-0.5 text-xs tracking-wider"
+                >companies</span
+              >
+            </div>
+            <div>
+              <span class="block text-white text-[1.53rem] font-bold">314</span>
+              <span class="block font-['Lexend_Deca'] uppercase text-slightly-transparent-white-60 mt-0.5 text-xs tracking-wider"
+                >templates</span
+              >
+            </div>
+            <div>
+              <span class="block text-white text-[1.53rem] font-bold">12M+</span>
+              <span class="block font-['Lexend_Deca'] uppercase text-slightly-transparent-white-60 mt-0.5 text-xs tracking-wider"
+                >queries</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="attribution text-slightly-transparent-white-75 bottom-7 text-center px-5 mt-10 static mobile:mt-0 mobile:fixed">
+      <span class="inline-block">
+        Challenge by
+        <a
+          class="underline text-soft-violet"
+          href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
+          target="_blank"
+          >Frontend Mentor</a
+        >.
+      </span>
+      <span class="inline-block">
+        Coded by <a class="underline text-soft-violet" href="https://www.frontendmentor.io/profile/Dev-MV6">Dev-MV6</a>.
+      </span>
+    </div>
+  </body>
+</html>

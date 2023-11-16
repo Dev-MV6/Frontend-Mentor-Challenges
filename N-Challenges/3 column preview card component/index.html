@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="build.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | 3-column preview card component</title>
+  </head>
+  <body class="bg-light-gray p-6 flex items-center justify-center min-h-screen flex-col font-['Lexend_Deca']">
+    <main class="rounded-lg overflow-hidden mobile:w-[919px] mobile:flex mobile:mt-[2.7rem]">
+      <div class="p-12 bg-bright-orange mobile:w-1/3">
+        <img src="./images/icon-sedans.svg" alt="" />
+        <h1 class="mt-9 text-light-gray leading-[2.85rem] text-[2.45rem] uppercase font-['Big_Shoulders_Display']">Sedans</h1>
+        <p class="mt-7 text-[0.942rem] leading-6 mobile:leading-[1.55rem] text-transparent-white">
+          Choose a sedan for its affordability and excellent fuel economy. Ideal for cruising in the city or on your next road
+          trip.
+        </p>
+        <button
+          class="mt-7 mobile:mt-[5.1rem] group text-bright-orange bg-light-gray text-[0.942rem] py-[0.8rem] px-8 rounded-full relative overflow-hidden outline outline-2 outline-light-gray -outline-offset-2 hover:text-light-gray transition-colors duration-200 z-20"
+        >
+          <span
+            class="button-effect absolute bg-bright-orange aspect-square w-full rounded-full transition-all duration-300 -translate-x-1/2 -translate-y-1/2 scale-[0] group-hover:scale-[2] -z-10 pointer-events-none"
+          ></span>
+          Learn More
+        </button>
+      </div>
+
+      <div class="p-12 bg-dark-cyan mobile:w-1/3">
+        <img src="./images/icon-suvs.svg" alt="" />
+        <h1 class="mt-9 text-light-gray leading-[2.85rem] text-[2.45rem] uppercase font-['Big_Shoulders_Display']">SUVs</h1>
+        <p class="mt-7 text-[0.942rem] leading-6 mobile:leading-[1.55rem] text-transparent-white">
+          Take an SUV for its spacious interior, power, and versatility. Perfect for your next family vacation and off-road
+          adventures.
+        </p>
+        <button
+          class="mt-7 mobile:mt-[5.1rem] group text-dark-cyan bg-light-gray text-[0.942rem] py-[0.8rem] px-8 rounded-full relative overflow-hidden outline outline-2 outline-light-gray -outline-offset-2 hover:text-light-gray transition-colors duration-200 z-20"
+        >
+          <span
+            class="button-effect absolute bg-dark-cyan aspect-square w-full rounded-full transition-all duration-300 -translate-x-1/2 -translate-y-1/2 scale-[0] group-hover:scale-[2] -z-10 pointer-events-none"
+          ></span>
+          Learn More
+        </button>
+      </div>
+
+      <div class="p-12 bg-very-dark-cyan mobile:w-1/3">
+        <img src="./images/icon-luxury.svg" alt="" />
+        <h1 class="mt-9 text-light-gray leading-[2.85rem] text-[2.45rem] uppercase font-['Big_Shoulders_Display']">Luxury</h1>
+        <p class="mt-7 text-[0.942rem] leading-6 mobile:leading-[1.55rem] text-transparent-white">
+          Cruise in the best car brands without the bloated prices. Enjoy the enhanced comfort of a luxury rental and arrive in
+          style.
+        </p>
+        <button
+          class="mt-7 mobile:mt-[5.1rem] group text-very-dark-cyan bg-light-gray text-[0.942rem] py-[0.8rem] px-8 rounded-full relative overflow-hidden outline outline-2 outline-light-gray -outline-offset-2 hover:text-light-gray transition-colors duration-200 z-20"
+        >
+          <span
+            class="button-effect absolute bg-very-dark-cyan aspect-square w-full rounded-full transition-all duration-300 -translate-x-1/2 -translate-y-1/2 scale-[0] group-hover:scale-[2] -z-10 pointer-events-none"
+          ></span>
+          Learn More
+        </button>
+      </div>
+    </main>
+
+    <div class="bottom-7 text-center text-[#444] text-[0.942rem] px-5 mt-10 static mobile:mt-0 mobile:fixed">
+      <span class="inline-block">
+        Challenge by
+        <a
+          class="underline text-dark-cyan"
+          href="https://www.frontendmentor.io/challenges/3column-preview-card-component-pH92eAR2-"
+          target="_blank"
+          >Frontend Mentor</a
+        >.
+      </span>
+      <span class="inline-block"
+        >Coded by <a class="underline text-dark-cyan" href="https://www.frontendmentor.io/profile/Dev-MV6">Dev-MV6</a>.</span
+      >
+    </div>
+
+    <script>
+      function onBtnHoverEffectStart(e) {
+        const effect = e.target.querySelector(".button-effect");
+        effect.style.top = e.offsetY + "px";
+        effect.style.left = e.offsetX + "px";
+      }
+
+      document.querySelectorAll("button").forEach((btn) => {
+        btn.addEventListener("mouseenter", onBtnHoverEffectStart);
+        btn.addEventListener("mouseleave", onBtnHoverEffectStart);
+      });
+    </script>
+  </body>
+</html>

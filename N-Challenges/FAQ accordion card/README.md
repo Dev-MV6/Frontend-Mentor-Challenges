@@ -4,7 +4,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://dev-mv6.github.io/Frontend-Mentor-Challenges/FAQ%20accordion%20card/">
+    <a href="https://dev-mv6.github.io/Frontend-Mentor-Challenges/N-Challenges/FAQ%20accordion%20card/">
       Live
     </a>
     <span> | </span>
@@ -50,16 +50,13 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/responsive-faq-accordion-card-_APfL2xhSy)
-- Live Site URL: [GitHub Pages](https://dev-mv6.github.io/Frontend-Mentor-Challenges/FAQ%20accordion%20card/)
+- Live Site URL: [GitHub Pages](https://dev-mv6.github.io/Frontend-Mentor-Challenges/N-Challenges/FAQ%20accordion%20card/)
 
 ## Development
 
 ### Built with
 
-- HTML5
-- CSS
-- Flexbox
-- Javascript
+<img src="https://skillicons.dev/icons?i=html,css,js" title="HTML5 + CSS + JavaScript">
 
 ### Useful resources
 
