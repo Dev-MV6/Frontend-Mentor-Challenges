@@ -1,0 +1,27 @@
+.text-transparent-white {
+  color: hsla(0, 0%, 100%, 0.3)
+}
+
+.control--invalid .input-border {
+  background: hsl(0, 100%, 66%) !important;
+}
+
+.control--invalid .invalid-field-alert {
+  display: inline-block !important;
+}
+
+.card-wrapper {
+  transform-style: preserve-3d !important;
+  perspective: 600px !important;
+}
+
+@media not (hover: hover) {
+  .card {
+    transform: none !important;
+  }
+}
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

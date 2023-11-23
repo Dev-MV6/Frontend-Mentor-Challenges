@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="build.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Age calculator app</title>
+  </head>
+  <body
+    class="select-none flex mt-[88px] mobile:mt-0 mobile:items-center justify-center min-h-screen bg-off-white font-['Poppins'] text-off-black selection:bg-purple selection:text-white"
+  >
+    <main class="flex flex-col items-center">
+      <div
+        class="bg-white p-6 rounded-3xl rounded-br-[100px] w-[347px] min-h-[486px] mobile:w-[840px] mobile:min-h-[651px] mobile:rounded-br-[200px] mobile:py-[32px] mobile:px-14"
+      >
+        <div id="birthdate" class="flex justify-between mt-6 mobile:justify-normal">
+          <div
+            class="font-bold after:content-['Must_be_a_valid_day'] after:text-light-red after:text-sm after:italic after:font-normal after:mt-2 after:hidden after:w-[87px] mobile:after:w-[160px]"
+          >
+            <label class="block uppercase tracking-[0.2rem] text-smokey-grey text-[0.75rem] mobile:text-sm" for="day">Day</label>
+            <input
+              id="day-input"
+              class="field focus-visible:outline-purple block w-[87px] mt-[4px] mobile:mt-[9px] h-[54px] border-solid border-light-grey border-[1px] rounded-lg p-4 text-xl mobile:w-[160px] mobile:h-[72px] mobile:text-[32px] mobile:px-[23px] focus-visible:outline mobile:mr-[32px] placeholder:text-smokey-grey/80 caret-purple"
+              placeholder="DD"
+              type="text"
+              maxlength="2"
+            />
+          </div>
+          <div
+            class="font-bold after:content-['Must_be_a_valid_month'] after:text-light-red after:text-sm after:italic after:font-normal after:mt-2 after:hidden after:w-[87px] mobile:after:w-[160px]"
+          >
+            <label class="block uppercase tracking-[0.2rem] text-smokey-grey text-[0.75rem] mobile:text-sm" for="day"
+              >Month</label
+            >
+            <input
+              id="month-input"
+              class="field focus-visible:outline-purple block w-[87px] mt-[4px] mobile:mt-[9px] h-[54px] border-solid border-light-grey border-[1px] rounded-lg p-4 text-xl mobile:w-[160px] mobile:h-[72px] mobile:text-[32px] mobile:px-[23px] focus-visible:outline mobile:mr-[32px] placeholder:text-smokey-grey/80 caret-purple"
+              placeholder="MM"
+              type="text"
+              maxlength="2"
+            />
+          </div>
+          <div
+            class="font-bold after:content-['Must_be_a_valid_year'] after:text-light-red after:text-sm after:italic after:font-normal after:mt-2 after:hidden after:w-[87px] mobile:after:w-[160px]"
+          >
+            <label class="block uppercase tracking-[0.2rem] text-smokey-grey text-[0.75rem] mobile:text-sm" for="day">Year</label>
+            <input
+              id="year-input"
+              class="field focus-visible:outline-purple block w-[87px] mt-[4px] mobile:mt-[9px] h-[54px] border-solid border-light-grey border-[1px] rounded-lg p-4 text-xl mobile:w-[160px] mobile:h-[72px] mobile:text-[32px] mobile:px-[23px] focus-visible:outline placeholder:text-smokey-grey/80 caret-purple"
+              placeholder="YYYY"
+              type="text"
+              maxlength="4"
+            />
+          </div>
+        </div>
+
+        <div class="relative mt-[63px] mobile:mt-[47px]">
+          <hr class="border-t-light-grey" />
+          <button
+            class="absolute top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 h-16 w-16 bg-purple p-5 rounded-full cursor-pointer mobile:right-0 mobile:left-auto mobile:-translate-x-0 mobile:h-[96px] mobile:w-[96px] mobile:p-6 hover:bg-off-black transition-colors"
+          >
+            <img class="h-full" src="./images/icon-arrow.svg" alt="" />
+          </button>
+        </div>
+
+        <div class="space-y-2 mt-[68px] text-[55px] leading-[1] font-extrabold italic mobile:text-[105px] mobile:mt-[53px]">
+          <div><span id="years-result" class="text-purple">--</span> <span>years</span></div>
+          <div><span id="months-result" class="text-purple">--</span> <span>months</span></div>
+          <div><span id="days-result" class="text-purple">--</span> <span>days</span></div>
+        </div>
+      </div>
+
+      <div class="bottom-7 text-center text-smokey-grey text-[0.942rem] px-5 mt-10 static mobile:mt-0 mobile:fixed">
+        <span class="inline-block">
+          Challenge by
+          <a
+            class="underline text-purple"
+            href="https://www.frontendmentor.io/challenges/age-calculator-app-dF9DFFpj-Q"
+            target="_blank"
+            >Frontend Mentor</a
+          >.
+        </span>
+        <span class="inline-block"
+          >Coded by <a class="underline text-purple" href="https://www.frontendmentor.io/profile/Dev-MV6">Dev-MV6</a>.</span
+        >
+      </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

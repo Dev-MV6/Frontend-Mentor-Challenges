@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="build.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
+
+    <title>Frontend Mentor | Fylo data storage component</title>
+  </head>
+  <body
+    class="min-h-screen font-['Raleway'] flex items-center justify-center p-[25px] bg-[url('./images/bg-mobile.png')] lg:bg-[url('./images/bg-desktop.png')] bg-no-repeat max-lg:bg-cover lg:bg-bottom bg-very-dark-blue"
+  >
+    <main class="w-full max-w-[500px] lg:max-w-none">
+      <div
+        class="flex flex-col lg:flex-row gap-[15px] w-full items-end justify-center lg:gap-[30px] -translate-y-[10px] max-lg:mt-[-15px]"
+      >
+        <div
+          class="bg-dark-blue rounded-[10px] rounded-tr-[100px] p-[40px] w-full shadow-2xl shadow-[#0006] lg:min-w-[350px] lg:w-[350px]"
+        >
+          <img src="./images/logo.svg" alt="Fylo logo" />
+          <div class="flex gap-[16px] mt-[32px] flex-wrap">
+            <button
+              type="button"
+              class="bg-very-dark-blue rounded-[10px] min-w-[48px] min-h-[48px] flex items-center justify-center duration-300 cursor-pointer hover:bg-very-dark-blue/60 transition-colors"
+            >
+              <img src="./images/icon-document.svg" alt="Document" />
+            </button>
+            <button
+              type="button"
+              class="bg-very-dark-blue rounded-[10px] min-w-[48px] min-h-[48px] flex items-center justify-center duration-300 cursor-pointer hover:bg-very-dark-blue/60 transition-colors"
+            >
+              <img src="./images/icon-folder.svg" alt="Folder" />
+            </button>
+            <button
+              type="button"
+              class="bg-very-dark-blue rounded-[10px] min-w-[48px] min-h-[48px] flex items-center justify-center duration-300 cursor-pointer hover:bg-very-dark-blue/60 transition-colors"
+            >
+              <img src="./images/icon-upload.svg" alt="Upload" />
+            </button>
+          </div>
+        </div>
+
+        <div
+          id="storage-state"
+          class="bg-dark-blue rounded-[10px] p-[30px] max-lg:pb-[50px] lg:p-[40px] lg:py-[38px] relative text-pale-blue w-full shadow-2xl shadow-[#0006] lg:max-w-[540px] lg:h-[154px]"
+        >
+          <span id="storage-state__description" class="text-center text-[0.87rem] block lg:text-start tracking-[0.01em]"
+            >You've used <b>815 GB</b> of your storage</span
+          >
+          <div id="storage-state__bar" class="rounded-full h-[20px] p-[3px] bg-very-dark-blue/50 mt-[13px]">
+            <div
+              class="w-[14px] h-full bg-gradient-to-r from-[hsl(6,100%,80%)] to-[hsl(335,100%,65%)] after:absolute after:h-[calc(100%-4px)] after:bg-pale-blue after:aspect-square after:right-[2px] after:top-[2px] relative rounded-full after:rounded-full"
+            ></div>
+          </div>
+          <div class="flex justify-between mt-[6px] text-[0.75rem]">
+            <span class="font-bold">0 GB</span>
+            <span class="font-bold">1000 GB</span>
+          </div>
+          <div
+            class="bg-[#fff] max-lg:left-1/2 -translate-x-1/2 max-lg:bottom-0 translate-y-1/2 absolute rounded-[10px] w-[179px] h-[72px] flex items-center justify-center lg:transform-none lg:right-[40px] lg:-top-[47px] lg:rounded-br-none"
+          >
+            <!-- Dialog corner effect -->
+            <!-- w-[calc(1px*sqrt(pow(22.5,2)*2))] -->
+            <div
+              class="hidden lg:block absolute bottom-px right-0 w-[31.8167px] h-[31.8167px] translate-y-full after:bg-[#fff] after:absolute after:w-full after:h-full after:rotate-45 after:-translate-y-1/2 after:translate-x-1/2 overflow-hidden"
+            ></div>
+            <span id="storage-left" class="font-bold text-[2.5rem] text-very-dark-blue">185</span
+            ><span class="inline-block ml-[8px] text-grayish-blue font-bold text-[0.75rem] tracking-widest lg:translate-y-[2px]"
+              >GB LEFT</span
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        class="attribution text-pale-blue bottom-7 text-center px-5 mt-20 static lg:mt-0 lg:fixed text-[0.9rem] left-1/2 lg:-translate-x-1/2"
+      >
+        <span class="inline-block">
+          Challenge by
+          <a
+            class="underline text-[#647bce]"
+            href="https://www.frontendmentor.io/challenges/stats-preview-card-component-8JqbgoU62"
+            target="_blank"
+            >Frontend Mentor</a
+          >.
+        </span>
+        <span class="inline-block">
+          Coded by <a class="underline text-[#647bce]" href="https://www.frontendmentor.io/profile/Dev-MV6">Dev-MV6</a>.
+        </span>
+      </div>
+    </main>
+  </body>
+</html>

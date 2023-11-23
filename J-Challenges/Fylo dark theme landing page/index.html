@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="build.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Fylo landing page with dark theme and features grid</title>
+  </head>
+  <body class="font-['Open_Sans'] bg-dark-blue-100 text-white">
+    <nav
+      class="flex justify-center items-center px-[40px] py-[50px] smd:px-[80px] smd:py-[74px] select-none font-[Raleway] flex-wrap smd:justify-between gap-[30px_50px]"
+    >
+      <img class="w-[176px]" src="./images/logo.svg" alt="" />
+      <div class="space-x-[38px] smd:space-x-[58px] text-[1.1em] smd:text-base text-center">
+        <a
+          href="#"
+          class="inline-block relative after:w-0 after:-translate-x-1/2 after:absolute after:-bottom-[2px] hover:after:w-full after:left-1/2 after:bg-cyan after:h-[1px] after:transition-[width] cursor-pointer"
+          >Features</a
+        ><a
+          href="#"
+          class="inline-block relative after:w-0 after:-translate-x-1/2 after:absolute after:-bottom-[2px] hover:after:w-full after:left-1/2 after:bg-cyan after:h-[1px] after:transition-[width] cursor-pointer"
+          >Team</a
+        ><a
+          href="#"
+          class="inline-block relative after:w-0 after:-translate-x-1/2 after:absolute after:-bottom-[2px] hover:after:w-full after:left-1/2 after:bg-cyan after:h-[1px] after:transition-[width] cursor-pointer"
+          >Sign in</a
+        >
+      </div>
+    </nav>
+
+    <main class="text-center flex flex-col items-center">
+      <section
+        class="w-full md:pb-[199px] bg-[url('./images/bg-curvy-mobile.svg')] md:bg-[url('./images/bg-curvy-desktop.svg')] bg-no-repeat bg-bottom bg-contain"
+      >
+        <div class="max-w-[820px] mx-auto px-[30px] smd:px-[50px]">
+          <img src="./images/illustration-intro.png" alt="" />
+          <h1 class="text-[2.5rem] mt-[36px] font-bold font-[Raleway]">
+            All your files in one secure location, accessible anywhere.
+          </h1>
+          <p class="mt-[33px] text-[1.27rem] px-[50px] tracking-[-0.007em]">
+            Fylo stores all your most important files in one secure location. Access them wherever you need, share and collaborate
+            with friends family, and co-workers.
+          </p>
+          <button
+            class="mt-[30px] font-bold rounded-full h-[55px] w-[280px] text-[1rem] bg-gradient-to-r from-cyan to-blue hover:to-cyan"
+          >
+            Get Started
+          </button>
+        </div>
+      </section>
+
+      <div class="w-full flex items-center flex-col bg-dark-blue-200 px-[30px] smd:px-[50px]">
+        <!-- Features -->
+        <section class="mt-[174px] md:-mt-[25px]">
+          <div class="max-w-[930px] flex flex-wrap justify-center md:justify-between gap-[93px]">
+            <div class="w-full max-w-[400px]">
+              <img class="h-[78px] mx-auto" src="./images/icon-access-anywhere.svg" alt="" />
+              <h3 class="text-[1.25rem] font-bold block mt-[22px] font-[Raleway]">Access your files, anywhere</h3>
+              <p class="mt-[5px] text-[0.9rem] lg:px-[20px]">
+                The ability to use a smartphone, tablet, or computer to access your account means your files follow you
+                everywhere.
+              </p>
+            </div>
+
+            <div class="w-full max-w-[400px]">
+              <img class="h-[78px] mx-auto" src="./images/icon-security.svg" alt="" />
+              <h3 class="text-[1.25rem] font-bold block mt-[22px] font-[Raleway]">Security you can trust</h3>
+              <p class="mt-[5px] text-[0.9rem]">
+                2-factor authentication and user-controlled encryption are just a couple of the security features we allow to help
+                secure your files.
+              </p>
+            </div>
+
+            <div class="w-full max-w-[400px]">
+              <img class="h-[78px] mx-auto scale-90" src="./images/icon-collaboration.svg" alt="" />
+              <h3 class="text-[1.25rem] font-bold block mt-[22px] font-[Raleway]">Real-time collaboration</h3>
+              <p class="mt-[5px] text-[0.9rem]">
+                Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments
+                required.
+              </p>
+            </div>
+
+            <div class="w-full max-w-[400px]">
+              <img class="h-[78px] mx-auto scale-90" src="./images/icon-any-file.svg" alt="" />
+              <h3 class="text-[1.25rem] font-bold block mt-[22px] font-[Raleway]">Store any type of file</h3>
+              <p class="mt-[5px] text-[0.9rem] lg:px-[20px]">
+                Whether you're sharing holidays photos or work documents, Fylo has you covered allowing for all file types to be
+                securely stored and shared.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Stay productive -->
+        <section class="w-full max-w-[1230px] flex text-left justify-center items-center mt-[136px] flex-wrap md:flex-nowrap">
+          <img src="./images/illustration-stay-productive.png" alt="" class="md:min-w-[400px]" />
+          <div class="md:ml-[58px] text-[1rem] space-y-[20px] mt-[40px] md:min-w-[360px] max-w-[557px]">
+            <h2 class="text-[2.5rem] leading-[3.1rem] font-bold font-[Raleway] lg:pr-[60px]">
+              Stay productive, wherever you are
+            </h2>
+            <p>
+              Never let location be an issue when accessing your files. Fylo has you covered for all of your file storage needs.
+            </p>
+            <p>
+              Securely share files and folders with friends, family and colleagues for live collaboration. No email attachments
+              required.
+            </p>
+            <a
+              class="inline-block relative text-cyan after:absolute after:w-[calc(100%+2px)] after:left-0 after:bg-cyan after:h-[1px] cursor-pointer after:-bottom-[4px] group hover:text-white hover:after:bg-white transition-colors after:transition-colors"
+              href="#"
+            >
+              See how Fylo works
+              <svg
+                class="inline group-hover:translate-x-[4px] transition-[transform]"
+                width="16"
+                height="16"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+              >
+                <defs>
+                  <circle id="b" cx="6" cy="6" r="6" />
+                  <filter x="-25%" y="-25%" width="150%" height="150%" filterUnits="objectBoundingBox" id="a">
+                    <feOffset in="SourceAlpha" result="shadowOffsetOuter1" />
+                    <feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
+                    <feColorMatrix
+                      values="0 0 0 0 0.384313725 0 0 0 0 0.878431373 0 0 0 0 0.850980392 0 0 0 0.811141304 0"
+                      in="shadowBlurOuter1"
+                    />
+                  </filter>
+                </defs>
+                <g fill="none" fill-rule="evenodd">
+                  <g transform="translate(2 2)">
+                    <use fill="#000" filter="url(#a)" xlink:href="#b" />
+                    <use class="group-hover:fill-white transition-[fill]" fill="#62E0D9" xlink:href="#b" />
+                  </g>
+                  <path d="M8.582 6l-.363.35 1.452 1.4H5.333v.5h4.338L8.22 9.65l.363.35 2.074-2z" fill="#1B2330" />
+                </g>
+              </svg>
+            </a>
+          </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section
+          class="flex bg-[url(./images/bg-quotes.png)] bg-no-repeat bg-left-top px-[8px] py-[36px] gap-[40px] text-left max-w-[1177px] justify-center mt-[142px] text-[0.85rem] tracking-wider flex-wrap"
+        >
+          <div class="bg-dark-blue rounded-sm p-[25px] pt-[40px] w-full max-w-[360px] shadow-lg">
+            <p class="leading-[1.33rem]">
+              Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a
+              well-oiled collaboration machine.
+            </p>
+            <div class="flex mt-[24px]">
+              <img class="w-[24px] h-[24px] rounded-full" src="./images/profile-1.jpg" alt="" />
+              <div class="ml-[10px]">
+                <span class="block font-bold text-[0.65rem]">Satish Patel</span>
+                <span class="block text-[0.45rem] mt-[2px]">Founder & CEO, Huddle</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-dark-blue rounded-sm p-[25px] pt-[40px] w-full max-w-[360px] shadow-lg">
+            <p class="leading-[1.33rem]">
+              Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a
+              well-oiled collaboration machine.
+            </p>
+            <div class="flex mt-[24px]">
+              <img class="w-[24px] h-[24px] rounded-full" src="./images/profile-2.jpg" alt="" />
+              <div class="ml-[10px]">
+                <span class="block font-bold text-[0.65rem]">Bruce Mckenzie</span>
+                <span class="block text-[0.45rem] mt-[2px]">Founder & CEO, Huddle</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-dark-blue rounded-sm p-[25px] pt-[40px] w-full max-w-[360px] shadow-lg">
+            <p class="leading-[1.33rem]">
+              Fylo has improved our team productivity by an order of magnitude. Since making the switch our team has become a
+              well-oiled collaboration machine.
+            </p>
+            <div class="flex mt-[24px]">
+              <img class="w-[24px] h-[24px] rounded-full" src="./images/profile-3.jpg" alt="" />
+              <div class="ml-[10px]">
+                <span class="block font-bold text-[0.65rem]">Iva Boyd</span>
+                <span class="block text-[0.45rem] mt-[2px]">Founder & CEO, Huddle</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Sign up -->
+        <section
+          class="relative -bottom-[115px] bg-dark-blue-100 p-[50px] px-[30px] smd:px-[50px] rounded-lg shadow-lg shadow-[#00000060] mt-[45px] max-w-[863px] pb-[40px] z-10"
+        >
+          <h2 class="text-[2rem] leading-9 font-bold font-[Raleway] tracking-[0.005em]">Get early access today</h2>
+          <p class="text-[0.9rem] smd:px-[60px] mt-[22px] tracking-[-0.012em]">
+            It only takes a minute to sign up and our free starter tier is extremely generous. If you have any questions, our
+            support team would be happy to help you.
+          </p>
+          <div class="mt-[37px] flex smd:px-[27px] flex-wrap smd:flex-nowrap justify-between gap-[30px]">
+            <div class="w-full relative">
+              <input
+                class="inline-block rounded-full px-[40px] h-[48px] text-dark-blue-300 text-[1rem] peer md:max-w-[480px] max-w-none w-full"
+                type="email"
+                placeholder="email@example.com"
+              />
+              <span
+                class="text-light-red absolute -bottom-[23px] left-1/2 -translate-x-1/2 hidden peer-invalid:inline text-[0.8rem] font-bold w-max"
+                >Please enter a valid email address</span
+              >
+            </div>
+            <button
+              class="inline-block h-[48px] smd:max-w-[200px] font-bold rounded-full text-sm bg-gradient-to-r from-cyan to-blue hover:to-cyan text-[0.8rem] w-full"
+              type="button"
+            >
+              Get Started For Free
+            </button>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer
+      class="bg-dark-blue-300 p-[100px] pt-[200px] lg:pb-[92px] pb-[140px] px-[60px] smd:px-[120px] relative overflow-hidden"
+    >
+      <div
+        class="hidden smd:max-lg:block absolute bottom-[180px] right-[-120px] w-[500px] aspect-[344/300] bg-[url('./images/logo.svg')] bg-cover opacity-[0.03]"
+      >
+        <!-- <img class="h-full max-w-none" src="" alt="" /> -->
+      </div>
+      <div class="w-full lg:w-[1239px] max-w-[1239px] lg:max-w-none mx-auto">
+        <img src="./images/logo.svg" alt="" />
+        <div class="mt-[32px] flex flex-col lg:flex-row">
+          <div>
+            <div class="flex w-full max-w-[380px]">
+              <img class="h-min translate-y-[8px]" src="./images/icon-location.svg" alt="" />
+              <p class="ml-[27px]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua
+              </p>
+            </div>
+
+            <div
+              class="bottom-20 text-[0.942rem] mt-10 absolute lg:static -translate-x-1/2 left-1/2 smd:transform-none smd:left-auto w-full flex justify-center flex-wrap px-[60px] smd:block smd:px-0"
+            >
+              <span class="inline-block">
+                Challenge by
+                <a
+                  class="underline text-blue"
+                  href="https://www.frontendmentor.io/challenges/fylo-dark-theme-landing-page-5ca5f2d21e82137ec91a50fd"
+                  target="_blank"
+                  >Frontend Mentor</a
+                >.&nbsp
+              </span>
+              <span class="inline-block"
+                >Coded by <a class="underline text-blue" href="https://www.frontendmentor.io/profile/Dev-MV6">Dev-MV6</a>.</span
+              >
+            </div>
+          </div>
+
+          <div class="lg:ml-[81px] text-[0.88rem] mt-[20px] lg:mt-0">
+            <div class="min-w-max">
+              <img class="inline-block" src="./images/icon-phone.svg" alt="" />
+              <span class="ml-[23px]">+1-543-123-4567</span>
+            </div>
+
+            <div class="mt-[19px] min-w-max">
+              <img class="inline-block" src="./images/icon-email.svg" alt="" />
+              <a href="mailto:example@fylo.com" class="ml-[20px]">example@fylo.com</a>
+            </div>
+          </div>
+
+          <div class="lg:ml-[147px] space-y-[14px] mt-[80px] lg:mt-0">
+            <a href="#" class="min-w-max block hover:text-cyan transition-colors">About Us</a>
+            <a href="#" class="min-w-max block hover:text-cyan transition-colors">Jobs</a>
+            <a href="#" class="min-w-max block hover:text-cyan transition-colors">Press</a>
+            <a href="#" class="min-w-max block hover:text-cyan transition-colors">Blog</a>
+          </div>
+
+          <div class="lg:ml-[80px] space-y-[14px] mt-[40px] lg:mt-0">
+            <a href="#" class="min-w-max block hover:text-cyan transition-colors">Contact Us</a>
+            <a href="#" class="min-w-max block hover:text-cyan transition-colors">Terms</a>
+            <a href="#" class="min-w-max block hover:text-cyan transition-colors">Privacy</a>
+          </div>
+
+          <div class="lg:ml-[114px] flex space-x-[13px] mt-[70px] lg:mt-0 justify-center smd:justify-normal">
+            <a
+              href="#"
+              class="w-[31px] h-[31px] p-[7px] border-[1px] border-white rounded-full fill-white hover:fill-cyan hover:border-cyan transition-colors cursor-pointer"
+            >
+              <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <path
+                  d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="w-[31px] h-[31px] p-[7px] border-[1px] border-white rounded-full fill-white hover:fill-cyan hover:border-cyan transition-colors duration-300 cursor-pointer"
+            >
+              <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <path
+                  d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="w-[31px] h-[31px] p-[7px] border-[1px] border-white rounded-full fill-white hover:fill-cyan hover:border-cyan transition-colors duration-300 cursor-pointer"
+            >
+              <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <!--! Font Awesome Pro 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                <path
+                  d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

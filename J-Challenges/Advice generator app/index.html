@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="build.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;800&display=swap" rel="stylesheet" />
+
+    <title>Frontend Mentor | Advice generator app</title>
+  </head>
+  <body
+    class="bg-dark-blue text-light-cyan min-h-screen flex justify-center items-center px-4 font-[Manrope] selection:bg-neon-green selection:text-dark-blue"
+  >
+    <main class="w-full mobile:w-auto">
+      <div
+        id="card"
+        class="bg-dark-grayish-blue rounded-xl py-[37px] px-[23px] mobile:p-[47px] text-center relative max-w-[539px] shadow-2xl font-bold -mt-[31px] transition-[all]"
+      >
+        <div id="advice" class="pb-[22px]">
+          <span id="advice-id" class="uppercase text-neon-green text-[0.7rem] mobile:text-[0.85rem] tracking-[0.28em]"
+            >Advice #117</span
+          >
+          <p id="advice-quote" class="mt-5 text-[1.5rem] mobile:text-[1.72rem] leading-[2rem] mobile:leading-[2.4rem] font-bold">
+            “It is easy to sit up and take notice, what's difficult is getting up and taking action.”
+          </p>
+          <picture>
+            <source srcset="./images/pattern-divider-desktop.svg" media="(min-width: 500px)" />
+            <img
+              id="advice-quote-divider"
+              class="select-none mt-7 mx-auto mobile:mt-10"
+              src="./images/pattern-divider-mobile.svg"
+              alt=""
+              draggable="false"
+            />
+          </picture>
+        </div>
+
+        <button
+          type="button"
+          id="fetch-new-advice-btn"
+          class="rounded-full bg-neon-green w-[65px] h-[65px] absolute left-1/2 -translate-x-1/2 bottom-0 translate-y-1/2 cursor-pointer transition-shadow hover:shadow-[0px_0px_30px_hsl(150,_100%,_66%)]"
+        >
+          <img
+            id="dice"
+            class="select-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+            src="./images/icon-dice.svg"
+            alt=""
+            draggable="false"
+          />
+        </button>
+      </div>
+
+      <div class="attribution bottom-7 text-center text-[0.942rem] px-5 mt-14 w-full">
+        <span class="inline-block">
+          Challenge by
+          <a
+            class="underline text-neon-green"
+            href="https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db"
+            target="_blank"
+            >Frontend Mentor</a
+          >.
+        </span>
+        <span class="inline-block"
+          >Coded by <a class="underline text-neon-green" href="https://www.frontendmentor.io/profile/Dev-MV6">Dev-MV6</a>.</span
+        >
+      </div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>

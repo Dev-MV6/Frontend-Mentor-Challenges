@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* NAVIGATION MENU */
+.nav-item--active .nav-item__trigger > svg {
+  transform: rotateZ(180deg) !important;
+}
+
+.main-nav-menu--mob,
+.nav-item--active .nav-item__menu {
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* MOBILE */
+#mob-nav-btn,
+img {
+  -webkit-user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-drag: none !important;
+  user-select: none !important;
+  touch-action: manipulation !important;
+}
+
+.mob-nav-btn--active {
+  background-image: url("./images/icon-close.svg") !important;
+  scale: 0.8;
+}
+
+@media (max-width: 999px) {
+  .nav-item--active .nav-item__trigger > span {
+    color: hsl(208 49% 24% / 0.75) !important;
+  }
+
+  .nav-item--active:nth-child(1) .nav-item__menu {
+    height: 236px !important;
+  }
+
+  .nav-item--active:nth-child(2) .nav-item__menu {
+    height: 195.8px !important;
+  }
+
+  .nav-item--active:nth-child(3) .nav-item__menu {
+    height: 155.6px !important;
+  }
+
+  .main-nav-menu--mob {
+    top: calc(100% + 30px) !important;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1000px) {
+  .nav-item--active .nav-item__trigger > span {
+    color: #fff !important;
+    text-decoration: underline !important;
+  }
+
+  .nav-item--active .nav-item__trigger > svg > path {
+    opacity: 1 !important;
+  }
+
+  .nav-item--active .nav-item__menu {
+    top: calc(100% + 20px) !important;
+  }
+}

@@ -1,0 +1,16 @@
+
+.attribution {
+  position: static !important;
+}
+
+@media (min-height: 600px) {
+  .attribution {
+    position: fixed !important;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}  
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

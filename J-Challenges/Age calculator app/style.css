@@ -1,0 +1,44 @@
+:root {
+  --light-red: hsl(0, 100%, 67%)
+}
+
+.invalid-field::after {
+  display: inline-block !important;
+}
+
+.invalid-field > label {
+  color: var(--light-red) !important;
+}
+
+.invalid-field > input {
+  border-color: var(--light-red) !important;
+  outline-color: var(--light-red) !important;
+}
+
+.invalid-field--empty::after {
+  content: 'This field is required' !important;
+}
+
+.birthdate--invalid label {
+  color: var(--light-red) !important;
+}
+
+.birthdate--invalid input {
+  border-color: var(--light-red) !important;
+  outline-color: var(--light-red) !important;
+}
+
+
+.birthdate--invalid .invalid-field:first-of-type::after {
+  content: "Must be a date in the past" !important;
+}
+
+@media (min-width: 900px) {
+  .birthdate--invalid .invalid-field:first-of-type::after {
+    width: auto
+  } 
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
