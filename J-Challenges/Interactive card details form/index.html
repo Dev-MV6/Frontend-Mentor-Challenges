@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="build.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet" />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body class="min-h-screen font-['Space_Grotesk'] selection:bg-violet selection:text-white">
+    <main class="h-screen select-none mobile:flex">
+      <div
+        class="h-[240px] mobile:h-full mobile:w-[738px] mobile:bg-[url('./images/bg-main-desktop.png')] bg-[url('./images/bg-main-mobile.png')] bg-no-repeat bg-cover relative text-white"
+      >
+        <div
+          class="card-wrapper absolute left-1/2 top-[126px] -translate-x-[60%] mobile:left-auto mobile:transform-none mobile:-right-[127px] mobile:top-[186px] drop-shadow-2xl z-20"
+        >
+          <div
+            class="card bg-[url('./images/bg-card-front.png')] bg-cover w-[285px] h-[157px] mobile:w-[447px] mobile:h-[245px] py-[18px] px-[19px] mobile:py-[29px] mobile:px-[33px] pointer-events-none"
+          >
+            <img class="w-[54px] mobile:w-auto" src="./images/card-logo.svg" alt="" />
+            <span
+              id="card-number-preview"
+              class="block text-[1.10rem] mt-[36px] tracking-[0.14em] mobile:text-[1.8rem] mobile:mt-[61px] mobile:tracking-widest"
+              >0000 0000 0000 0000</span
+            >
+            <div
+              class="flex justify-between w-full mt-[13px] mobile:mt-[22px] text-[0.6rem] tracking-widest mobile:text-[0.85rem] mobile:tracking-[0.17em]"
+            >
+              <span id="cardholder-name-preview" class="uppercase overflow-hidden whitespace-nowrap text-ellipsis w-[310px]"
+                >Jane Appleseed</span
+              >
+              <span id="exp-date-preview" class="ml-auto mr-px mobile:-mr-[2px]">00/00</span>
+            </div>
+          </div>
+        </div>
+        <div
+          class="card-wrapper absolute left-1/2 top-[32px] -translate-x-[40%] mobile:left-auto mobile:transform-none mobile:-right-[223px] mobile:top-[469px] drop-shadow-2xl z-10"
+        >
+          <div
+            class="card bg-[url('./images/bg-card-back.png')] bg-cover w-[285px] h-[157px] mobile:w-[447px] mobile:h-[245px] pointer-events-none"
+          >
+            <span
+              id="cvc-preview"
+              class="absolute text-[0.6rem] top-[70px] right-[35px] mobile:text-[0.85rem] mobile:top-[111px] mobile:right-[58px] tracking-[0.17em]"
+              >000</span
+            >
+          </div>
+        </div>
+      </div>
+      <form class="w-full relative flex justify-center px-[20px]" autocomplete="off">
+        <div class="w-[326px] mobile:w-[380px] mt-[90px] mobile:mt-[273px] mobile:ml-[120px] text-very-dark-violet relative">
+          <div id="card-details-fields" class="space-y-5 mobile:space-y-6">
+            <div>
+              <label
+                class="block uppercase mobile:tracking-widest tracking-[0.155em] text-[0.75rem] mobile:text-[0.82rem]"
+                for="cardholder-name"
+                >Cardholder name</label
+              >
+              <div class="relative">
+                <input
+                  class="w-full peer block text-[1.1rem] tracking-[0.3px] rounded-lg border-transparent border-solid border-[1px] h-[45px] mt-[6px] px-[14px] placeholder:text-light-grayish-violet focus-visible:outline-none"
+                  id="cardholder-name-field"
+                  type="text"
+                  placeholder="e.g. Jane Appleseed"
+                  maxlength="34"
+                />
+                <div
+                  class="input-border absolute -z-10 rounded-lg -top-px -left-px w-[calc(100%+2px)] h-[calc(100%+2px)] bg-light-grayish-violet peer-focus-visible:bg-gradient-to-r peer-focus-visible:from-violet peer-focus-visible:to-[hsl(278,_94%,_30%)] peer-invalid:bg-red"
+                ></div>
+              </div>
+              <span class="invalid-field-alert text-red hidden mt-[6px] text-[0.85rem]">Field is required</span>
+            </div>
+
+            <div>
+              <label
+                class="block uppercase mobile:tracking-widest tracking-[0.155em] text-[0.75rem] mobile:text-[0.82rem]"
+                for="card-number"
+                >Card number</label
+              >
+              <div class="relative">
+                <input
+                  class="w-full peer block text-[1.1rem] tracking-[0.3px] rounded-lg border-transparent border-solid border-[1px] h-[45px] mt-[6px] px-[14px] placeholder:text-light-grayish-violet focus-visible:outline-none"
+                  id="card-number-field"
+                  type="text"
+                  placeholder="e.g. 1234 5678 9123 0000"
+                  maxlength="19"
+                  pattern="(\d{4} ){3}\d{4}"
+                />
+                <div
+                  class="input-border absolute -z-10 rounded-lg -top-px -left-px w-[calc(100%+2px)] h-[calc(100%+2px)] bg-light-grayish-violet peer-focus-visible:bg-gradient-to-r peer-invalid:bg-red peer-focus-visible:from-violet peer-focus-visible:to-[hsl(278,_94%,_30%)]"
+                ></div>
+              </div>
+              <span class="invalid-field-alert text-red hidden mt-[6px] text-[0.85rem]">Invalid format</span>
+            </div>
+
+            <div class="flex">
+              <div id="exp-date-container" class="min-w-[163px] mobile:min-w-0 mobile:mr-[3px] mobile:w-full">
+                <label
+                  class="block uppercase mobile:tracking-widest tracking-[0.155em] text-[0.75rem] mobile:text-[0.82rem] mb-[6px]"
+                  for="exp-date-month"
+                  >Exp. Date (mm/yy)</label
+                >
+                <div class="inline-block relative mr-[9px] mobile:mr-[14px]">
+                  <input
+                    id="exp-month-field"
+                    class="w-[70px] mobile:w-[78px] peer text-[1.1rem] tracking-[0.3px] rounded-lg border-transparent border-solid border-[1px] h-[45px] px-[14px] placeholder:text-light-grayish-violet focus-visible:outline-none"
+                    id="exp-date-month"
+                    type="text"
+                    placeholder="MM"
+                    maxlength="2"
+                    pattern="\d{2}"
+                  />
+                  <div
+                    class="input-border absolute -z-10 rounded-lg -top-px -left-px w-[calc(100%+2px)] h-[calc(100%+2px)] bg-light-grayish-violet peer-focus-visible:bg-gradient-to-r peer-focus-visible:from-violet peer-focus-visible:to-[hsl(278,_94%,_30%)] peer-invalid:bg-red"
+                  ></div>
+                 </div
+                 ><div class="inline-block relative">
+                  <input
+                    id="exp-year-field"
+                    class="w-[70px] mobile:w-[78px] peer text-[1.1rem] tracking-[0.3px] rounded-lg border-transparent border-solid border-[1px] h-[45px] px-[14px] placeholder:text-light-grayish-violet focus-visible:outline-none"
+                    id="exp-date-year"
+                    type="text"
+                    placeholder="YY"
+                    maxlength="2"
+                    pattern="\d{2}"
+                  />
+                  <div
+                    class="input-border absolute -z-10 rounded-lg -top-px -left-px w-[calc(100%+2px)] h-[calc(100%+2px)] bg-light-grayish-violet peer-focus-visible:bg-gradient-to-r peer-focus-visible:from-violet peer-focus-visible:to-[hsl(278,_94%,_30%)] peer-invalid:bg-red"
+                  ></div>
+                </div>
+                <span class="invalid-field-alert text-red hidden mt-[6px] text-[0.85rem]">Invalid date</span>
+              </div>
+
+              <div class="min-w-[80px] mobile:min-w-0 mobile:w-full">
+                <label
+                  class="block uppercase mobile:tracking-widest tracking-[0.155em] text-[0.75rem] mobile:text-[0.82rem]"
+                  for="cvc"
+                  >CVC</label
+                >
+                <div class="relative">
+                  <input
+                    id="cvc-field"
+                    class="w-full peer block text-[1.1rem] tracking-[0.3px] rounded-lg border-transparent border-solid border-[1px] h-[45px] mt-[6px] px-[14px] placeholder:text-light-grayish-violet focus-visible:outline-none"
+                    id="cvc"
+                    type="text"
+                    placeholder="e.g. 123"
+                    maxlength="3"
+                    pattern="\d{3}"
+                  />
+                  <div
+                    class="input-border absolute -z-10 rounded-lg -top-px -left-px w-[calc(100%+2px)] h-[calc(100%+2px)] bg-light-grayish-violet peer-focus-visible:bg-gradient-to-r peer-focus-visible:from-violet peer-focus-visible:to-[hsl(278,_94%,_30%)] peer-invalid:bg-red"
+                  ></div>
+                </div>
+                <span class="invalid-field-alert text-red hidden mt-[6px] text-[0.85rem]">Invalid code</span>
+              </div>
+            </div>
+
+            <button
+              class="bg-very-dark-violet text-light-grayish-violet w-full h-[53px] rounded-lg !mt-[29px] mobile:!mt-[41px] block text-[1.1rem] tracking-[0.3px] hover:opacity-80 transition-opacity"
+              type="submit"
+            >
+              Confirm
+            </button>
+          </div>
+
+          <div id="complete-state" class="flex-col items-center text-center hidden">
+            <img class="mt-0 mobile:mt-[32px]" src="./images/icon-complete.svg" alt="" />
+            <span
+              class="uppercase text-[1.77rem] mobile:text-[1.8rem] mt-[33px] mobile:mt-[32px] tracking-[0.1em] mobile:tracking-[0.1em]"
+              >Thank you!</span
+            >
+            <p class="text-dark-grayish-violet text-[18px] mt-[10px]">We've added your card details</p>
+            <button
+              class="bg-very-dark-violet text-light-grayish-violet w-full h-[53px] rounded-lg !mt-[46px] block text-[1.1rem] tracking-[0.3px] hover:opacity-80 transition-opacity"
+              type="button"
+            >
+              Continue
+            </button>
+          </div>
+
+          <div
+            class="attribution bottom-7 text-center text-[0.942rem] mt-14 w-full text-very-dark-violet/75 static mobile:mt-0 mobile:absolute mobile:left-1/2 mobile:-translate-x-1/2 mb-8 mobile:mb-0"
+          >
+            <span class="inline-block">
+              Challenge by
+              <a
+                class="underline text-very-dark-violet"
+                href="https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw"
+                target="_blank"
+                >Frontend Mentor</a
+              >.
+            </span>
+            <span class="inline-block"
+              >Coded by
+              <a class="underline text-very-dark-violet" href="https://www.frontendmentor.io/profile/Dev-MV6">Dev-MV6</a>.</span
+            >
+          </div>
+        </div>
+      </form>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>

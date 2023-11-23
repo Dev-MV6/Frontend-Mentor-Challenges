@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="build.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet" />
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+  </head>
+  <body class="min-h-screen font-['Epilogue'] bg-almost-white pb-[30px] md:pb-[120px]">
+    <nav
+      class="flex items-center px-[14px] py-[24px] md:py-[21px] md:px-[13px] md:max-w-[1390px] mx-auto text-medium-gray justify-between md:justify-normal text-[0.9rem] select-none"
+    >
+      <img class="ml-[3px] md:translate-y-[3px]" src="./images/logo.svg" alt="" />
+      <button
+        id="mob-nav-btn"
+        class="bg-[url('./images/icon-menu.svg')] bg-center w-[34px] h-[25px] bg-no-repeat md:hidden z-30 -translate-y-[4px]"
+        type="button"
+        aria-expanded="false"
+        aria-controls="main-nav-menu"
+      ></button>
+      <div
+        class="bg-[#fff] md:bg-[transparent] right-0 fixed md:flex md:static md:justify-between flex-col md:flex-row md:w-full md:ml-[62px] h-screen w-[240px] top-0 md:h-auto z-20 p-[25px] md:p-0 hidden md:transform-none"
+        id="main-nav-menu"
+      >
+        <div
+          class="flex md:items-center gap-[18px] md:gap-[39px] flex-col md:flex-row md:mt-0 mt-[54px] md:text-[1em] text-[1.1em]"
+        >
+          <div class="nav-item relative">
+            <button
+              class="nav-item__trigger flex items-center gap-[16px] md:gap-[6px] group w-full"
+              aria-expanded="false"
+              aria-controls="nav-menu-features"
+              type="button"
+            >
+              <span class="group-hover:text-almost-black transition-colors duration-300 pointer-events-none">Features</span>
+              <svg
+                class="-translate-y-px transition-transform pointer-events-none"
+                width="10"
+                height="6"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="group-hover:stroke-almost-black transition-colors duration-300"
+                  stroke="#686868"
+                  stroke-width="1.5"
+                  fill="none"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            <div
+              id="nav-menu-features"
+              class="nav-item__menu flex flex-col invisible opacity-0 h-0 md:h-auto top-full md:absolute md:bg-[#fff] md:shadow-[0_10px_60px_#0003] md:px-[25px] md:py-[20px] md:min-w-max rounded-xl gap-[19px] md:gap-[10px] right-0 transition-[visibility,opacity,top,height]"
+            >
+              <a class="group mt-[25px] md:mt-0 ml-[58px] md:ml-[28px] flex items-center" href="#">
+                <img class="absolute left-[32px] -translate-x-1/2 scale-125 md:scale-100" src="./images/icon-todo.svg" alt="" />
+                <span class="group-hover:text-almost-black transition-colors">Todo List</span></a
+              >
+              <a class="group ml-[58px] md:ml-[28px] flex items-center" href="#">
+                <img
+                  class="absolute left-[32px] -translate-x-1/2 scale-125 md:scale-100"
+                  src="./images/icon-calendar.svg"
+                  alt=""
+                />
+                <span class="group-hover:text-almost-black transition-colors">Calendar</span></a
+              >
+              <a class="group ml-[58px] md:ml-[28px] flex items-center" href="#">
+                <img
+                  class="absolute left-[32px] -translate-x-1/2 scale-125 md:scale-100"
+                  src="./images/icon-reminders.svg"
+                  alt=""
+                />
+                <span class="group-hover:text-almost-black transition-colors">Reminders</span></a
+              >
+              <a class="group ml-[58px] md:ml-[28px] flex items-center mb-[7px] md:mb-0" href="#">
+                <img
+                  class="absolute left-[32px] -translate-x-1/2 scale-125 md:scale-100"
+                  src="./images/icon-planning.svg"
+                  alt=""
+                />
+                <span class="group-hover:text-almost-black transition-colors">Planning</span></a
+              >
+            </div>
+          </div>
+
+          <div class="nav-item relative">
+            <button
+              class="nav-item__trigger flex items-center gap-[16px] md:gap-[6px] group w-full"
+              aria-expanded="false"
+              aria-controls="nav-menu-company"
+              type="button"
+            >
+              <span class="group-hover:text-almost-black transition-colors duration-300 pointer-events-none">Company</span>
+              <svg
+                class="-translate-y-px transition-transform pointer-events-none"
+                width="10"
+                height="6"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  class="group-hover:stroke-almost-black transition-colors duration-300"
+                  stroke="#686868"
+                  stroke-width="1.5"
+                  fill="none"
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            <div
+              id="nav-menu-company"
+              class="nav-item__menu flex flex-col invisible opacity-0 h-0 md:h-auto top-full md:absolute md:bg-[#fff] md:shadow-[0_10px_60px_#0003] md:px-[25px] md:py-[20px] md:min-w-max rounded-xl gap-[19px] md:gap-[10px] left-0 transition-[visibility,opacity,top,height]"
+            >
+              <a class="md:ml-0 ml-[24px] mt-[20px] md:mt-0 hover:text-almost-black transition-colors" href="#">History</a>
+              <a class="md:ml-0 ml-[24px] hover:text-almost-black transition-colors" href="#">Our Team</a>
+              <a class="md:ml-0 ml-[24px] mb-[7px] md:mb-0 hover:text-almost-black transition-colors" href="#">Blog</a>
+            </div>
+          </div>
+
+          <a class="hover:text-almost-black transition-colors duration-300" href="#">Careers</a>
+          <a class="hover:text-almost-black transition-colors duration-300" href="#">About</a>
+        </div>
+
+        <div class="flex flex-col md:flex-row justify-center mt-[35px] md:mt-0 gap-[10px] md:gap-[40px] items-center">
+          <button class="hover:text-almost-black transition-colors duration-300" type="button">Login</button>
+          <button
+            class="border-solid border-2 border-medium-gray/70 rounded-[13px] md:w-[106px] h-[42px] hover:text-almost-black hover:border-almost-black/90 transition-colors duration-300 w-full"
+            type="button"
+          >
+            Register
+          </button>
+        </div>
+      </div>
+      <div
+        class="mob-nav-backdrop opacity-0 pointer-events-none bg-[#000a] w-screen h-screen fixed top-0 left-0 z-10 transition-opacity"
+      ></div>
+    </nav>
+    <main
+      class="flex flex-col max-w-[600px] mx-auto w-full md:flex-row md:max-w-[1180px] md:justify-between md:mt-[46px] relative"
+    >
+      <picture class="md:order-1">
+        <source media="(min-width: 1065px)" srcset="./images/image-hero-desktop.png" />
+        <img class="md:min-w-[480px] md:max-w-[480px] select-none w-full" src="./images/image-hero-mobile.png" alt="" />
+      </picture>
+      <div class="text-center md:text-left md:ml-[35px]">
+        <h1
+          class="text-[2.2rem] font-bold leading-[1.1em] md:leading-[5rem] mt-[49px] md:mt-[104px] md:tracking-[-0.015em] md:text-[5rem]"
+        >
+          Make <span class="inline-block">remote work</span>
+        </h1>
+        <p
+          class="text-medium-gray mt-[17px] md:max-w-[450px] md:mt-[49px] mx-[15px] md:mx-0 leading-[1.6em] text-[1rem] md:text-[1.1rem] tracking-[0.015em]"
+        >
+          Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.
+        </p>
+        <button
+          class="h-[48px] w-[135px] md:h-[54px] md:w-[161px] mt-[25px] bg-almost-black text-almost-white font-bold rounded-[14px] md:text-[1.1rem] md:mt-[51px] border-solid border-[1px] border-almost-black hover:text-almost-black hover:bg-[transparent] transition-colors duration-300"
+          type="button"
+        >
+          Learn more
+        </button>
+        <div
+          class="flex items-center justify-between mt-[44px] md:mt-[108px] max-w-[400px] mx-auto md:max-w-[480px] md:mx-0 w-full select-none"
+        >
+          <img class="md:transform-none scale-[0.72]" src="./images/client-databiz.svg" alt="Databiz logo" />
+          <img class="md:transform-none scale-[0.72]" src="./images/client-audiophile.svg" alt="Audiphile logo" />
+          <img class="md:transform-none scale-[0.72]" src="./images/client-meet.svg" alt="Meet logo" />
+          <img class="md:transform-none scale-[0.72]" src="./images/client-maker.svg" alt="Maker logo" />
+        </div>
+      </div>
+      <div
+        class="attribution text-almost-black -bottom-[95px] left-1/2 md:-translate-x-1/2 text-center px-5 mt-[30px] static md:mt-0 md:absolute text-[0.9rem]"
+      >
+        <span class="inline-block">
+          Challenge by
+          <a
+            class="underline text-medium-gray"
+            href="https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5"
+            target="_blank"
+            >Frontend Mentor</a
+          >.
+        </span>
+        <span class="inline-block">
+          Coded by <a class="underline text-medium-gray" href="https://www.frontendmentor.io/profile/Dev-MV6">Dev-MV6</a>.
+        </span>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

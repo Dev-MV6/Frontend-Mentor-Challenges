@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+main > div:first-child {
+  animation: slideUp 500ms;
+  animation-timing-function: ease-in-out;
+}
+
+#storage-state__bar > div:first-child {
+  animation: barExpantion 800ms 600ms forwards;
+  animation-timing-function: cubic-bezier(0.3, 0, 0, 1);
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes barExpantion {
+  0% {
+    width: 14px;
+  }
+
+  100% {
+    width: 74.8898%;
+  }
+}
+
+@media (min-width: 1441px) {
+  body {
+    background-image: url("./images/bg-desktop.png"), linear-gradient(#0f1b3d, #0f1b3d) !important;
+    background-position: bottom right !important;
+    background-size: auto, auto 420px !important;
+  }
+}

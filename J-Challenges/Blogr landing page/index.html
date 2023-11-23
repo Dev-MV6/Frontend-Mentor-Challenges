@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <link rel="stylesheet" href="build.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | [Blogr]</title>
+  </head>
+  <body class="font-[Overpass]">
+    <header
+      class="text-white bg-header md:bg-header-md bg-no-repeat py-[56px] md:py-[61px] px-[24px] md:px-[100px] h-[600px] rounded-bl-[100px]"
+    >
+      <div class="max-w-pageContent mx-auto">
+        <nav class="flex items-center md:font-[Ubuntu] justify-between relative md:static select-none">
+          <img class="w-[82px] md:w-min" src="./images/logo.svg" alt="" />
+          <button
+            tabindex="1"
+            id="mob-nav-btn"
+            type="button"
+            class="min-w-[32px] min-h-[32px] bg-[url('./images/icon-hamburger.svg')] bg-contain bg-no-repeat bg-center md:hidden cursor-pointer"
+            aria-expanded="false"
+            aria-controls="#main-nav-menu"
+          ></button>
+          <div
+            id="main-nav-menu"
+            class="absolute z-30 bg-white rounded-lg md:bg-[transparent] md:static opacity-0 invisible md:visible md:opacity-100 transition-[top,opacity,visibility] flex md:ml-[65px] md:justify-between w-full md:flex-row flex-col py-[30px] px-[20px] md:p-0 left-0 top-[calc(100%_+_10px)] md:transform-none md:shadow-none shadow-2xl text-[1.05rem] md:text-base"
+          >
+            <div class="flex items-center flex-col md:flex-row gap-[20px] md:gap-[30px]">
+              <div class="nav-item group relative flex flex-col justify-center w-full">
+                <button
+                  tabindex="1"
+                  class="nav-item__trigger cursor-pointer flex items-center justify-center"
+                  aria-controls="#nav-menu-product"
+                  aria-expanded="false"
+                >
+                  <span
+                    class="pointer-events-none font-bold text-very-dark-blue md:text-white/75 md:group-hover:text-white transition-color duration-300"
+                    >Product</span
+                  >
+                  <svg
+                    aria-hidden="true"
+                    class="ml-[8px] transition-transform pointer-events-none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="7"
+                  >
+                    <path
+                      class="stroke-very-light-red md:stroke-white transition-opacity"
+                      fill="none"
+                      stroke="#FFF"
+                      stroke-width="2"
+                      opacity=".75"
+                      d="M1 1l4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <div
+                  id="nav-menu-product"
+                  class="nav-item__menu opacity-0 invisible flex transition-[top,opacity,visibility,height] h-0 md:h-auto md:absolute md:p-[25px] w-full md:w-[168px] bg-grayish-blue/20 md:bg-white rounded-[5px] top-full -left-[23px] md:text-very-dark-black-blue text-very-dark-blue/80 flex-col md:shadow-2xl md:shadow-[#0005] gap-[15px] md:gap-[12px] items-center md:items-start md:mt-0 mt-[10px] font-bold md:font-normal"
+                >
+                  <a href="#" tabindex="1" class="mt-[25px] md:mt-0 md:hover:font-bold">Overview</a>
+                  <a href="#" tabindex="1" class="md:hover:font-bold">Pricing</a>
+                  <a href="#" tabindex="1" class="md:hover:font-bold">Marketplace</a>
+                  <a href="#" tabindex="1" class="md:hover:font-bold">Features</a>
+                  <a href="#" tabindex="1" class="mb-[25px] md:mb-0 md:hover:font-bold">Integrations</a>
+                </div>
+              </div>
+
+              <div class="nav-item group relative flex flex-col justify-center w-full">
+                <button
+                  tabindex="1"
+                  class="nav-item__trigger cursor-pointer flex items-center justify-center"
+                  aria-controls="#nav-menu-company"
+                  aria-expanded="false"
+                >
+                  <span
+                    class="pointer-events-none font-bold text-very-dark-blue md:text-white/75 md:group-hover:text-white transition-color duration-300"
+                    >Company</span
+                  >
+                  <svg
+                    aria-hidden="true"
+                    class="ml-[8px] transition-transform pointer-events-none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="7"
+                  >
+                    <path
+                      class="stroke-very-light-red md:stroke-white transition-opacity"
+                      fill="none"
+                      stroke="#FFF"
+                      stroke-width="2"
+                      opacity=".75"
+                      d="M1 1l4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <div
+                  id="nav-menu-company"
+                  class="nav-item__menu opacity-0 invisible flex transition-[top,opacity,visibility,height] h-0 md:h-auto md:absolute md:p-[25px] w-full md:w-[168px] bg-grayish-blue/20 md:bg-white rounded-[5px] top-full -left-[23px] md:text-very-dark-black-blue text-very-dark-blue/80 flex-col md:shadow-2xl md:shadow-[#0005] gap-[15px] md:gap-[12px] items-center md:items-start md:mt-0 mt-[10px] font-bold md:font-normal"
+                >
+                  <a href="#" tabindex="1" class="mt-[25px] md:mt-0 md:hover:font-bold">About</a>
+                  <a href="#" tabindex="1" class="md:hover:font-bold">Team</a>
+                  <a href="#" tabindex="1" class="md:hover:font-bold">Blog</a>
+                  <a href="#" tabindex="1" class="mb-[25px] md:mb-0 md:hover:font-bold">Careers</a>
+                </div>
+              </div>
+
+              <div class="nav-item group relative flex flex-col justify-center w-full">
+                <button
+                  tabindex="1"
+                  class="nav-item__trigger cursor-pointer flex items-center justify-center"
+                  aria-controls="#nav-menu-connect"
+                  aria-expanded="false"
+                >
+                  <span
+                    class="pointer-events-none font-bold text-very-dark-blue md:text-white/75 md:group-hover:text-white transition-color duration-300"
+                    >Connect</span
+                  >
+                  <svg
+                    aria-hidden="true"
+                    class="ml-[8px] transition-transform pointer-events-none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="10"
+                    height="7"
+                  >
+                    <path
+                      class="stroke-very-light-red md:stroke-white transition-opacity"
+                      fill="none"
+                      stroke="#FFF"
+                      stroke-width="2"
+                      opacity=".75"
+                      d="M1 1l4 4 4-4"
+                    />
+                  </svg>
+                </button>
+                <div
+                  id="nav-menu-connect"
+                  class="nav-item__menu opacity-0 invisible flex transition-[top,opacity,visibility,height] h-0 md:h-auto md:absolute md:p-[25px] w-full md:w-[168px] bg-grayish-blue/20 md:bg-white rounded-[5px] top-full -left-[23px] md:text-very-dark-black-blue text-very-dark-blue/80 flex-col md:shadow-2xl md:shadow-[#0005] gap-[15px] md:gap-[12px] items-center md:items-start md:mt-0 mt-[10px] font-bold md:font-normal"
+                >
+                  <a href="#" tabindex="1" class="mt-[25px] md:mt-0 md:hover:font-bold">Contact</a>
+                  <a href="#" tabindex="1" class="md:hover:font-bold">Newsletter</a>
+                  <a href="#" tabindex="1" class="mb-[25px] md:mb-0 md:hover:font-bold">LinkedIn</a>
+                </div>
+              </div>
+            </div>
+
+            <hr class="border-t-[1px] border-t-grayish-blue my-[20px] md:hidden" />
+
+            <div class="flex items-center flex-col md:flex-row mt-[10px] md:mt-0">
+              <button
+                tabindex="1"
+                class="text-very-dark-blue font-bold md:text-white/75 md:hover:text-white transition-colors md:mr-[30px]"
+              >
+                Login
+              </button>
+              <button
+                tabindex="1"
+                class="rounded-full md:hover:bg-white/25 md:hover:text-white transition-colors duration-300 bg-gradient-to-r from-grt-very-light-red to-grt-light-red mt-[20px] md:mt-0 md:bg-white md:bg-none md:text-grt-light-red font-bold w-[135px] h-[48px]"
+              >
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </nav>
+
+        <div class="flex items-center justify-center flex-col text-center">
+          <h1
+            class="text-[max(min(3.9rem,calc(9.8vw)),2rem)] md:text-[3.9rem] font-bold mt-[112px] md:mt-[128px] tracking-[-0.03em] leading-[1.2em]"
+          >
+            A modern publishing platform
+          </h1>
+          <p class="mt-[15px] text-[1.2rem] md:text-[1.3rem] tracking-[-0.02em] leading-[1.2em]">
+            Grow your audience and build your online brand
+          </p>
+          <div class="h-[48px] font-[Ubuntu] mt-[45px] flex">
+            <button
+              tabindex="1"
+              class="rounded-full w-[135px] hover:bg-white/25 hover:text-white transition-colors duration-300 bg-white text-light-red font-bold h-full"
+            >
+              Start for Free
+            </button>
+            <button
+              tabindex="1"
+              class="rounded-full w-[135px] bg-[transparent] z-20 hover:text-light-red text-white ring-[1px] ring-white ring-inset transition-colors duration-200 font-bold h-full ml-[18px] button-special relative group overflow-hidden"
+            >
+              <span
+                class="button-special--effect absolute bg-white aspect-square w-full rounded-full transition-all duration-300 -translate-x-1/2 -translate-y-1/2 scale-[0] group-hover:scale-[2] -z-10 pointer-events-none"
+              ></span>
+              Learn More
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main tabindex="-1" class="text-center md:text-left overflow-x-hidden">
+      <section class="mt-[105px] md:mt-[150px] max-w-pageContent+ mx-auto px-[24px]">
+        <h2
+          class="text-very-dark-blue font-bold text-[1.72rem] md:text-[2.45rem] text-center mt-[20px] tracking-[-0.03em] leading-[2rem] md:leading-normal"
+        >
+          Designed for the future
+        </h2>
+        <div class="flex relative mt-[40px] md:mt-[95px] flex-wrap-reverse">
+          <div class="w-full md:w-[535px] px-[10px] md:px-0 mt-[83px] md:mt-0 md:mr-[480px]">
+            <h3 class="text-very-dark-blue font-bold text-[1.8rem] tracking-[-0.022em] leading-[2rem] md:leading-normal">
+              Introducing an extensible editor
+            </h3>
+            <p class="mt-[15px] md:mt-[22px] text-very-dark-grayish-blue tracking-[0.08em] text-[0.9rem] leading-[1.75rem]">
+              Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. The editor
+              supports management of multiple blogs and allows easy manipulation of embeds such as images, videos, and Markdown.
+              Extensibility with plugins and themes provide easy ways to add functionality or change the looks of a blog.
+            </p>
+
+            <h3
+              class="text-very-dark-blue font-bold text-[1.8rem] mt-[43px] md:mt-[70px] tracking-[-0.022em] leading-[2rem] md:leading-normal"
+            >
+              Robust content management
+            </h3>
+            <p class="mt-[25px] md:mt-[22px] text-very-dark-grayish-blue tracking-[0.08em] text-[0.9rem] leading-[1.75rem]">
+              Flexible content management enables users to easily move through posts. Increase the usability of your blog by
+              adding customized categories, sections, format, or flow. With this functionality, you're in full control.
+            </p>
+          </div>
+          <picture class="md:absolute -right-[441px] -top-[233px] mx-auto md:transform-none scale-[1.24] md:mt-0 mt-[35px]">
+            <source srcset="./images/illustration-editor-desktop.svg" media="(min-width: 1000px)" />
+            <img src="./images/illustration-editor-mobile.svg" alt="" draggable="false" />
+          </picture>
+        </div>
+      </section>
+
+      <section
+        class="mt-[266px] md:mt-[254px] bg-bodySection md:bg-auto md:bg-bodySection-md flex rounded-bl-[100px] rounded-tr-[100px] min-h-[400px] bg-no-repeat md:pt-[112px] md:pb-[104px] pb-[114px] pl-[24px] pr-[32px]"
+      >
+        <div class="max-w-pageContent w-full flex mx-auto relative justify-end">
+          <img
+            class="h-min absolute top-[10px] -translate-y-1/2 -translate-x-1/2 left-1/2 md:transform-none max-w-[375px] md:max-w-none md:-top-[181px] md:-left-[38px]"
+            src="./images/illustration-phones.svg"
+            alt=""
+            draggable="false"
+          />
+          <div class="text-white md:w-[533px] md:ml-[510px] mt-[126px] md:mt-0 leading-[3.1rem] md:leading-normal md:relative">
+            <h2 class="font-bold text-[2.32rem] tracking-[-0.005em] mt-[100px] md:mt-0">State of the Art Infrastructure</h2>
+            <p class="tracking-[0.08em] text-[0.9rem] mt-[18px] md:mt-[16px] leading-[1.75rem]">
+              With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. This
+              ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="pb-[92px] md:pb-[301px] flex mt-[70px] md:mt-[301px] justify-end relative max-w-pageContent+ mx-auto px-[24px] flex-wrap"
+      >
+        <picture class="md:absolute -top-[185px] -left-[422px] mx-auto scale-[1.52] md:transform-none md:mt-0 mt-[53px]">
+          <source srcset="./images/illustration-laptop-desktop.svg" media="(min-width: 1000px)" />
+          <img src="./images/illustration-laptop-mobile.svg" alt="" draggable="false" />
+        </picture>
+        <div class="w-full md:w-[540px] md:relative mt-[97px] md:ml-[480px] md:mt-0 px-[5px] md:px-0 self-end">
+          <h3 class="text-very-dark-blue font-bold text-[1.8rem] tracking-[-0.022em]">Free, open, simple</h3>
+          <p class="mt-[21px] text-very-dark-grayish-blue tracking-[0.08em] text-[0.9rem] leading-[1.75rem]">
+            Blogr is a free and open source application backed by a large community of helpful developers. It supports features
+            such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, and works
+            seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
+          </p>
+
+          <h3 class="text-very-dark-blue font-bold text-[1.8rem] tracking-[-0.022em] mt-[38px] md:mt-[71px]">Powerful tooling</h3>
+          <p class="mt-[20px] text-very-dark-grayish-blue tracking-[0.08em] text-[0.9rem] leading-[1.75rem]">
+            Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze,
+            but capable of producing even the most complicated sites.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer
+      class="p-[75px] md:p-[70px] pb-[195px] sm:pb-[170px] md:pb-[75px] bg-very-dark-black-blue rounded-tr-[100px] select-none font-[Ubuntu] text-[1.1rem] sm:text-[0.95rem] relative text-grayish-blue"
+    >
+      <div class="flex max-w-pageContent mx-auto flex-col md:flex-row items-center md:items-start">
+        <div class="flex md:flex-col flex-wrap items-start md:relative md:translate-x-[-2px]">
+          <img class="min-w-max" src="./images/logo.svg" alt="" />
+          <div
+            class="flex md:flex-col flex-wrap absolute justify-center text-center sm:text-start bottom-[75px] md:bottom-auto md:top-[62px] text-[0.9rem] sm:min-w-max left-1/2 -translate-x-1/2 md:transform-none md:left-auto"
+          >
+            <span class="inline-block min-w-max">
+              Challenge by<br class="md:inline hidden" />
+              <a
+                class="underline text-very-light-red"
+                href="https://www.frontendmentor.io/challenges/blogr-landing-page-EX2RLAApP"
+                target="_blank"
+                tabindex="2"
+                >Frontend Mentor</a
+              >.&nbsp
+            </span>
+            <span class="inline-block"
+              >Coded by
+              <a tabindex="2" class="underline text-very-light-red" href="https://www.frontendmentor.io/profile/Dev-MV6"
+                >Dev-MV6</a
+              >.</span
+            >
+          </div>
+        </div>
+        <div
+          class="md:ml-[182px] max-w-[700px] flex justify-between w-full flex-col sm:flex-row mt-[76px] md:mt-[6px] sm:gap-0 gap-[44px]"
+        >
+          <div class="flex flex-col gap-[7px] sm:gap-[10px] items-center md:items-start">
+            <h4 class="mb-[22px] font-bold text-white">Product</h4>
+            <a href="#" tabindex="1" class="hover:underline cursor-pointer">Overview</a>
+            <a href="#" tabindex="1" class="hover:underline cursor-pointer">Pricing</a>
+            <a href="#" tabindex="1" class="hover:underline cursor-pointer">Marketplace</a>
+            <a href="#" tabindex="1" class="hover:underline cursor-pointer">Features</a>
+            <a href="#" tabindex="1" class="hover:underline cursor-pointer">Integrations</a>
+          </div>
+
+          <div class="md:-translate-x-[35px] flex flex-col gap-[7px] sm:gap-[10px] items-center md:items-start">
+            <h4 class="mb-[22px] font-bold text-white">Company</h4>
+            <a href="#" tabindex="1" class="hover:underline cursor-pointer">About</a>
+            <a href="#" tabindex="1" class="hover:underline cursor-pointer">Team</a>
+            <a href="#" tabindex="1" class="hover:underline cursor-pointer">Blog</a>
+            <a href="#" tabindex="1" class="hover:underline cursor-pointer">Careers</a>
+          </div>
+
+          <div class="md:-translate-x-[53px] flex flex-col gap-[7px] sm:gap-[10px] items-center md:items-start">
+            <h4 class="mb-[22px] font-bold text-white">Connect</h4>
+            <a href="#" tabindex="1" class="hover:underline cursor-pointer">Contact</a>
+            <a href="#" tabindex="1" class="hover:underline cursor-pointer">Newsletter</a>
+            <a href="#" tabindex="1" class="hover:underline cursor-pointer">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
