@@ -34,7 +34,7 @@ jobs:
                 npm install --prefix "$f"
                 echo "- Building: \"$f\"";
                 npm run build --prefix "$f"
-                echo "- Moving \"$f\" static files to \"./site\""
+                echo "- Moving \"$f\" static files to \"./_site\""
                 mv "$f/dist" "./_site/$f"
               else
                 echo "[*] \"$f\" is a normal project";
