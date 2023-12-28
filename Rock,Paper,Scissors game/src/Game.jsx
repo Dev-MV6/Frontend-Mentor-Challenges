@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef} from 'react'
 import GameBar from './GameBar'
 import Playground from './Playground'
 import Rules from './Rules'
@@ -267,8 +267,12 @@ class RockPaperScissors {
 }
 
 export default function Game({ initialBonusGameEnabled }) {
+  const gameInstanceRef = useRef();
   // Create game instance
-  const gameInstance = new RockPaperScissors()
+  if (!gameInstanceRef.current) {
+    gameInstanceRef.current = new RockPaperScissors();
+  }
+  const gameInstance = gameInstanceRef.current;
 
   // Bonus game enabled state
   const [bonusGameEnabled, setBonusGameEnabled] = useState(initialBonusGameEnabled)
