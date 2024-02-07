@@ -1,0 +1,408 @@
+$breakpoint-lg: 700px;
+
+@mixin lg {
+  @media (min-width: $breakpoint-lg) {
+    @content;
+  }
+}
+
+/* prettier-ignore */
+@mixin default-transition($props: (color, background)) {
+  transition-property: $props;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+
+:root,
+body.theme-1 {
+  --main-bg-color: hsl(222, 26%, 31%);
+  --main-fg-color: hsl(0, 0%, 100%);
+  --screen-bg-color: hsl(224, 36%, 15%);
+  --keypad-bg-color: hsl(223, 31%, 20%);
+  --normal-keys-bg-color: hsl(30, 25%, 89%);
+  --normal-keys-bg-color-hover: hsl(0, 0%, 100%);
+  --normal-keys-fg-color: hsl(221, 14%, 31%);
+  --normal-keys-shadow-color: hsl(28, 16%, 65%);
+  --special-keys-bg-color: hsl(225, 21%, 49%);
+  --special-keys-bg-color-hover: hsl(224, 51%, 76%);
+  --special-keys-fg-color: var(--main-fg-color);
+  --special-keys-shadow-color: hsl(224, 28%, 35%);
+  --equal-key-bg-color: hsl(6, 63%, 50%);
+  --equal-key-bg-color-hover: hsl(6, 93%, 67%);
+  --equal-key-fg-color: var(--main-fg-color);
+  --equal-key-shadow-color: hsl(6, 70%, 34%);
+}
+
+body.theme-2 {
+  --main-bg-color: hsl(0, 0%, 90%);
+  --main-fg-color: hsl(60, 10%, 19%);
+  --screen-bg-color: hsl(0, 0%, 93%);
+  --keypad-bg-color: hsl(0, 5%, 81%);
+  --normal-keys-bg-color: hsl(45, 7%, 89%);
+  --normal-keys-bg-color-hover: hsl(0, 0%, 100%);
+  --normal-keys-fg-color: var(--main-fg-color);
+  --normal-keys-shadow-color: hsl(35, 11%, 61%);
+  --special-keys-bg-color: hsl(185, 42%, 37%);
+  --special-keys-bg-color-hover: hsl(185, 41%, 56%);
+  --special-keys-fg-color: hsl(0, 0%, 100%);
+  --special-keys-shadow-color: hsl(185, 58%, 25%);
+  --equal-key-bg-color: hsl(25, 98%, 40%);
+  --equal-key-bg-color-hover: hsl(25, 100%, 61%);
+  --equal-key-fg-color: var(--special-keys-fg-color);
+  --equal-key-shadow-color: hsl(25, 99%, 27%);
+}
+
+body.theme-3 {
+  --main-bg-color: hsl(268, 75%, 9%);
+  --main-fg-color: hsl(52, 100%, 62%);
+  --screen-bg-color: hsl(268, 71%, 12%);
+  --keypad-bg-color: var(--screen-bg-color);
+  --normal-keys-bg-color: hsl(268, 47%, 21%);
+  --normal-keys-bg-color-hover: hsl(268, 54%, 44%);
+  --normal-keys-fg-color: var(--main-fg-color);
+  --normal-keys-shadow-color: hsl(290, 70%, 36%);
+  --special-keys-bg-color: hsl(281, 89%, 26%);
+  --special-keys-bg-color-hover: hsl(278, 56%, 45%);
+  --special-keys-fg-color: hsl(0, 0%, 100%);
+  --special-keys-shadow-color: hsl(285, 91%, 52%);
+  --equal-key-bg-color: hsl(176, 100%, 44%);
+  --equal-key-bg-color-hover: hsl(177, 100%, 79%);
+  --equal-key-fg-color: hsl(198, 20%, 13%);
+  --equal-key-shadow-color: hsl(177, 92%, 70%);
+}
+
+body {
+  background: var(--main-bg-color);
+  color: var(--main-fg-color);
+  @include default-transition;
+}
+
+.main-container {
+  padding: 16px 24px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.calc {
+  width: 327px;
+  margin: 0 auto;
+
+  * {
+    font-weight: 700;
+  }
+
+  @include lg {
+    width: 540px;
+    margin-top: 64px;
+  }
+}
+
+.calc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  .calc-logo {
+    margin: 0;
+    margin-left: 7px;
+    // margin-top: 19px;
+    transform: translateY(19px);
+
+    @include lg {
+      transform: translateY(28px);
+    }
+  }
+
+  .theme-toggle-container {
+    display: flex;
+    align-items: flex-end;
+    font-size: 0.7rem;
+    margin-top: 13px;
+
+    @include lg {
+      font-size: 0.9rem;
+    }
+
+    .theme-toggle-label {
+      text-transform: uppercase;
+      margin-right: 26px;
+      letter-spacing: 0.15em;
+      margin-bottom: 3px;
+
+      @include lg {
+      }
+    }
+
+    .theme-toggle {
+      width: 71px;
+
+      .theme-toggle__count {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 11px;
+
+        & > span {
+          position: relative;
+          cursor: pointer;
+
+          &::after {
+            content: "";
+            background-color: #fff;
+            opacity: 0;
+            height: 16px;
+            width: 16px;
+            position: absolute;
+            border-radius: 100%;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+            transition: opacity 100ms;
+          }
+
+          &:hover::after {
+            opacity: 0.2;
+          }
+        }
+      }
+
+      .theme-toggle__switch {
+        height: 25px;
+        border-radius: 9999px;
+        background-color: var(--keypad-bg-color);
+        @include default-transition(background-color);
+        margin-top: 4px;
+        position: relative;
+
+        &::after {
+          content: "";
+          background-color: var(--equal-key-bg-color);
+          height: 16px;
+          width: 16px;
+          position: absolute;
+          border-radius: 100%;
+          top: 5px;
+          left: 5px;
+          z-index: 20;
+          transition-property: left, background-color;
+          transition-duration: 100ms, 300ms;
+          transition-timing-function: ease-in-out;
+
+          body.theme-2 & {
+            left: 26px;
+          }
+
+          body.theme-3 & {
+            left: 49px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.calc-screen {
+  background-color: var(--screen-bg-color);
+  @include default-transition(background-color);
+  // padding: 21.5px 24px;
+  height: 88px;
+  padding: 0 24px;
+  border-radius: 10px;
+  margin-top: 32px;
+  display: flex;
+  align-items: center;
+  font-size: 2.45rem;
+  position: relative;
+
+  @include lg {
+    font-size: 3.39rem;
+    height: 128px;
+    padding: 0 33px;
+    margin-top: 33px;
+  }
+
+  .calc-screen__toggle-negative-btn {
+    position: absolute;
+    left: 13px;
+    top: calc(50% - 2px);
+    transform: translateY(-50%);
+    height: 35px;
+    @include lg {
+      left: 24px;
+      // top: 24px;
+      height: 50px;
+      // transform: none;
+    }
+    aspect-ratio: 1/1;
+    background-color: var(--main-bg-color);
+    @include default-transition(background-color);
+    border-radius: 100%;
+    cursor: pointer;
+
+    svg {
+      width: 50%;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+
+      path {
+        @include default-transition(fill);
+        fill: var(--main-fg-color);
+      }
+    }
+  }
+
+  .calc-screen__value {
+    user-select: text;
+    display: block;
+    width: max-content;
+    margin-left: auto;
+    transform: translateY(2px);
+
+    @include lg {
+      transform: translateY(1px);
+    }
+  }
+}
+
+$key-size: 60px;
+.keypad {
+  border-radius: 10px;
+  margin-top: 24px;
+  background-color: var(--keypad-bg-color);
+  @include default-transition(background-color);
+  padding: 24px;
+  padding-bottom: 30px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, $key-size);
+  grid-template-rows: repeat(5, $key-size);
+  gap: 17px 13px;
+  font-size: 2rem;
+
+  @include lg {
+    grid-template-columns: repeat(4, 100px);
+    gap: 28px 26px;
+    font-size: 2.5rem;
+    padding: 32px 31px;
+    padding-bottom: 35px;
+  }
+
+  .key {
+    --key-bg-color: var(--normal-keys-bg-color);
+    --key-bg-color-hover: var(--normal-keys-bg-color-hover);
+    --key-fg-color: var(--normal-keys-fg-color);
+    --key-shadow-color: var(--normal-keys-shadow-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: var(--key-bg-color);
+
+    @media (hover: hover) {
+      &:not(.key-operator--active) {
+        &:hover {
+          background-color: var(--key-bg-color-hover);
+        }
+      }
+    }
+
+    color: var(--key-fg-color);
+    box-shadow: 0 4px var(--key-shadow-color);
+    @include default-transition((background-color, color, box-shadow));
+
+    @include lg {
+      border-radius: 9px;
+    }
+
+    & > span:first-child {
+      transform: translateY(6px);
+      pointer-events: none;
+    }
+
+    &.key--special {
+      & > span:first-child {
+        transform: translateY(2px);
+      }
+
+      font-size: 1.2rem;
+      @include lg {
+        font-size: 1.7rem;
+      }
+
+      --key-bg-color: var(--special-keys-bg-color);
+      --key-bg-color-hover: var(--special-keys-bg-color-hover);
+      --key-fg-color: var(--special-keys-fg-color);
+      --key-shadow-color: var(--special-keys-shadow-color);
+    }
+
+    &.key--special:nth-of-type(17) {
+      grid-column: 1 / 3;
+    }
+
+    &.key--special:nth-of-type(18) {
+      grid-column: 3 / 5;
+      --key-bg-color: var(--equal-key-bg-color);
+      --key-bg-color-hover: var(--equal-key-bg-color-hover);
+      --key-fg-color: var(--equal-key-fg-color);
+      --key-shadow-color: var(--equal-key-shadow-color);
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .key-operator--active {
+    --key-shadow-color: hsl(41, 55%, 46%);
+    background-color: #cfa048;
+    color: #fff;
+
+    body.theme-2 & {
+      --key-shadow-color: hsl(39, 53%, 50%);
+      background-color: #ddad2a;
+      color: #fff;
+    }
+
+    body.theme-3 & {
+      --key-shadow-color: #623496;
+      background-color: #9c54ed;
+    }
+  }
+}
+
+.attribution {
+  bottom: 20px;
+  position: absolute;
+  text-align: center;
+  font-size: 1rem;
+  padding: 0 1.25rem;
+
+  span {
+    display: inline-block;
+
+    a {
+      text-decoration: underline;
+      color: var(--equal-key-bg-color);
+      @include default-transition(color);
+    }
+  }
+}
+
+@media (max-height: 880px) {
+  .main-container {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .attribution {
+    position: static;
+    margin: 40px 0;
+  }
+}
