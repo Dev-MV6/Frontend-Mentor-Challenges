@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Launch countdown, we're launching soon" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,700;1,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./src/index.css" />
+
+    <title>Frontend Mentor | Launch countdown timer</title>
+    <style>
+      /* Background stuff */
+      body {
+        background-color: hsl(234 17% 12%);
+        background-image: url("/bg-stars.svg"), linear-gradient(to top, #241e2c 30%, hsl(234, 17%, 12%));
+        background-position: 0px 3px, top;
+        animation: stars-bg-animation 200s linear infinite;
+      }
+
+      @media (max-width: 800px) {
+        body {
+          background-size: calc(100% * 2);
+        }
+
+        main {
+          background-size: calc(100% * 1.5);
+        }
+      }
+
+      /* prettier-ignore */
+      @keyframes stars-bg-animation {
+        from { background-position: 0px 3px, top; }
+        to { background-position: -1440px 3px, top; }
+      }
+
+      main {
+        background-repeat: repeat-x;
+        background-image: url("/pattern-hills.svg");
+        background-position: 0px bottom;
+        animation: bg-animation 50s linear infinite;
+      }
+
+      /* prettier-ignore */
+      @keyframes bg-animation {
+        from { background-position: 0px bottom; }
+        to { background-position: -1687px bottom; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="min-h-screen flex justify-center font-['Red_Hat_Text'] flex-col items-center" id="app"></main>
+    <script src="./src/main.js" type="module"></script>
+  </body>
+</html>
