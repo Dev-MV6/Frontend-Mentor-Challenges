@@ -1,79 +1,79 @@
-import { forwardRef, useRef, useState, useEffect } from "react";
+import { forwardRef, useRef, useState, useEffect } from "react"
 
 const IpAddressInfo = forwardRef(function IpAddressInfo({ location, setLocation }, ref) {
-  const inputBoxRef = useRef();
-  const errorMsgRef = useRef();
-  const [addressOrDomain, setAddressOrDomain] = useState("0.0.0.0");
-  const [timeOffset, setTimeOffset] = useState("0:00");
-  const [isp, setIsp] = useState("SpaceX Starlink");
+  const inputBoxRef = useRef()
+  const errorMsgRef = useRef()
+  const [addressOrDomain, setAddressOrDomain] = useState("0.0.0.0")
+  const [timeOffset, setTimeOffset] = useState("0:00")
+  const [isp, setIsp] = useState("SpaceX Starlink")
 
   function isValidAddress(x) {
     if (!x || !/^(\b25[0-5]|\b2[0-4][0-9]|\b[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/.test(x)) {
-      return false;
+      return false
     }
-    return true;
+    return true
   }
 
   function isValidDomain(x) {
     if (!x || !/^([a-z0-9]+(-[a-z0-9]+)*\.)+[a-z]{2,}$/.test(x)) {
-      return false;
+      return false
     }
-    return true;
+    return true
   }
 
-  const ipifyUrl = "https://geo.ipify.org/api/v2/country,city?apiKey=at_QxD8K29OnFLfwlupJRkR4QISU35Gk";
+  const ipifyUrl = "https://geo.ipify.org/api/v2/country,city?apiKey=at_dymoa2r8zBNvtyJtWoiu9o9QvWx7I"
 
   function showErrorMessage(msg) {
-    console.error(msg);
+    console.error(msg)
     if (errorMsgRef.current) {
-      errorMsgRef.current.classList.replace("hidden", "flex");
-      errorMsgRef.current.innerText = msg;
+      errorMsgRef.current.classList.replace("hidden", "flex")
+      errorMsgRef.current.innerText = msg
     }
   }
 
   function getIpAdressInfo(inputValue) {
-    let query;
+    let query
     if (inputValue || inputValue == "") {
       if (isValidAddress(inputValue)) {
-        query = "ipAddress=" + inputValue;
+        query = "ipAddress=" + inputValue
       } else if (isValidDomain(inputValue)) {
-        query = "domain=" + inputValue;
+        query = "domain=" + inputValue
       } else {
-        showErrorMessage("Please enter a valid IP address or domain");
-        return;
+        showErrorMessage("Please enter a valid IP address or domain")
+        return
       }
     }
 
-    errorMsgRef.current?.classList.replace("flex", "hidden");
+    errorMsgRef.current?.classList.replace("flex", "hidden")
 
-    const res = fetch(`${ipifyUrl}&${query}`, { method: "GET", cache: "force-cache" });
+    const res = fetch(`${ipifyUrl}&${query}`, { method: "GET", cache: "force-cache" })
     res
       .then((res) => {
         if (res.ok) {
           res.json().then((json) => {
-            setAddressOrDomain(json.ip);
-            setLocation(json.location);
-            setTimeOffset(json.location.timezone);
-            setIsp(json.isp);
-          });
+            setAddressOrDomain(json.ip)
+            setLocation(json.location)
+            setTimeOffset(json.location.timezone)
+            setIsp(json.isp)
+          })
         } else {
-          throw new Error();
+          throw new Error()
         }
       })
       .catch(() => {
-        showErrorMessage(`Unable to get information about this ${query == "ipAddress=" ? "IP address" : "domain"}`);
-      });
+        showErrorMessage(`Unable to get information about this ${query == "ipAddress=" ? "IP address" : "domain"}`)
+      })
   }
 
-  useEffect(getIpAdressInfo, []);
+  useEffect(getIpAdressInfo, [])
 
   return (
     <>
       <form
         className="flex h-[58px] rounded-2xl mt-[24px] lg:mt-[22px] lg:max-w-[555px] lg:mx-auto bg-white relative"
         onSubmit={(e) => {
-          e.preventDefault();
-          getIpAdressInfo(inputBoxRef.current.value);
+          e.preventDefault()
+          getIpAdressInfo(inputBoxRef.current.value)
         }}
       >
         <input
@@ -87,7 +87,7 @@ const IpAddressInfo = forwardRef(function IpAddressInfo({ location, setLocation 
         <button
           className="bg-black rounded-r-2xl min-w-[58px] flex items-center justify-center hover:opacity-80 cursor-pointer transition-opacity duration-300"
           type="submit"
-	  aria-label="Search"
+          aria-label="Search"
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="11" height="14">
             <path fill="none" stroke="#FFF" strokeWidth="3" d="M2 1l6 6-6 6" />
@@ -134,7 +134,7 @@ const IpAddressInfo = forwardRef(function IpAddressInfo({ location, setLocation 
         </div>
       </div>
     </>
-  );
-});
+  )
+})
 
-export default IpAddressInfo;
+export default IpAddressInfo
