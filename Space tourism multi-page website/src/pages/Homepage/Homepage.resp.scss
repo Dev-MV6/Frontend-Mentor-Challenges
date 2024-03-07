@@ -1,0 +1,65 @@
+@import "../../styles/responsive";
+
+@include tablet {
+  .homepage-main-container {
+    background-image: url("./images/home/background-home-tablet.jpg");
+    background-position: right;
+    padding-top: 204px;
+    padding-bottom: 480px;
+
+    .content {
+      text-align: center;
+      margin: 0 auto;
+      max-width: 440px;
+
+      .title-big {
+        font-size: 1.25rem;
+        letter-spacing: 3.38px;
+      }
+
+      .title-huge {
+        font-size: 9.375rem;
+        margin-top: 25px;
+      }
+
+      .paragraph {
+        margin-top: 24px;
+      }
+    }
+
+    .explore-button {
+      width: 242px;
+      height: 242px;
+      right: 50%;
+      bottom: -400px;
+      transform: translateX(50%);
+    }
+  }
+}
+
+@include mobile {
+  .homepage-main-container {
+    background-image: url("./images/home/background-home-mobile.jpg");
+    padding: 113px 25px;
+    padding-bottom: 280px;
+
+    .content {
+      .title-big {
+        font-size: 1rem;
+        letter-spacing: 2.7px;
+      }
+
+      .title-huge {
+        font-size: 5rem;
+      }
+    }
+
+    .explore-button {
+      bottom: -230px;
+      width: 150px;
+      height: 150px;
+      font-size: 1.25rem;
+      letter-spacing: 1.25px;
+    }
+  }
+}

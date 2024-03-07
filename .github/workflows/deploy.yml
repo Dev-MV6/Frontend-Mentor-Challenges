@@ -27,6 +27,11 @@ jobs:
           shopt -s extglob
           for f in !(_site); do
             if [ -d "$f" ]; then
+              # Ignore project
+              if [ -f "$f/.actionsignore" ]; then
+                echo "[*] Not building \"$f\" (.actionsignore found inside directory)"
+                continue
+              fi
               # Check if directory contains an npm project
               if [ -f "$f/package.json" ]; then
                 echo "[*] \"$f\" is an npm project";

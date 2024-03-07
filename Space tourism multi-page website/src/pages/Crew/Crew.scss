@@ -1,0 +1,80 @@
+.crew-main-container {
+  background-image: linear-gradient(var(--midnight-blue-translucent), var(--midnight-blue-translucent)), url("./images/crew/background-crew-desktop.jpg");
+  background-size: cover;
+
+  .content-wrapper {
+    position: relative;
+  }
+
+  .crew-member-photo {
+    position: absolute;
+    top: -15px;
+    right: -22px;
+
+    &.crew-member-photo--mission-specialist {
+      top: 45px;
+    }
+
+    &.crew-member-photo--pilot {
+      top: 40px;
+    }
+
+    &.crew-member-photo--flight-engineer {
+      top: 83px;
+    }
+  }
+
+  .crew-member {
+    margin-top: 160px;
+    font-family: "Bellefair";
+
+    .crew-member__role {
+      text-transform: uppercase;
+      font-size: 2rem;
+      color: hsla(0, 0%, 100%, 0.4);
+    }
+
+    .crew-member__name {
+      text-transform: uppercase;
+      font-size: 3.5rem;
+      margin-top: 22px;
+    }
+
+    .crew-member__bio {
+      margin-top: 30px;
+      max-width: 450px;
+    }
+
+    &.crew-member--flight-engineer.crew-member__bio {
+      max-width: 435px;
+    }
+  }
+
+  .crew-navbar {
+    position: absolute;
+    top: 576px;
+    left: 2px;
+
+    .crew-navbar__list {
+      display: flex;
+      gap: 24px;
+
+      .crew-navbar__link {
+        display: inline-block;
+        cursor: pointer;
+        width: 15px;
+        height: 15px;
+        background-color: hsla(0, 0%, 100%, 0.2);
+        border-radius: 100%;
+        transition: background-color 300ms;
+
+        &.active {
+          pointer-events: none;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+@import "./Crew.resp.scss";
