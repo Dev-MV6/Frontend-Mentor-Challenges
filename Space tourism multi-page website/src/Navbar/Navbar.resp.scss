@@ -1,0 +1,115 @@
+@import "../styles/responsive";
+
+@include tablet {
+  .main-navbar {
+    top: 0;
+    .main-navbar__logo {
+      margin-left: 39px;
+    }
+
+    &::after {
+      display: none;
+    }
+
+    .main-navbar__list {
+      width: 450px;
+      padding-left: 48px;
+      font-size: 0.875rem;
+      gap: 37px;
+      letter-spacing: 2.36px;
+    }
+
+    .main-navbar__item-enumeration {
+      display: none;
+    }
+  }
+}
+
+@include mobile {
+  .main-navbar {
+    .main-navbar__logo {
+      margin-left: 24px;
+      margin-top: 24px;
+      width: 40px;
+      height: 40px;
+    }
+
+    .main-navbar__list {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      flex-direction: column;
+      gap: 20px;
+      padding: 112px 0;
+      align-items: flex-start;
+      width: 254px;
+      font-size: 1rem;
+      letter-spacing: 2.7px;
+      transition: transform 150ms ease-in-out;
+    }
+
+    &:not(.main-navbar--mobile-open) .main-navbar__list {
+      transform: translateX(100%);
+    }
+
+    .main-navbar__item {
+      height: 31px;
+      width: 100%;
+
+      .main-navbar__link {
+        padding-left: 32px;
+
+        &::after {
+          width: 4px !important;
+          height: 100%;
+          bottom: auto;
+          left: auto;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%);
+        }
+      }
+
+      .main-navbar__item-enumeration {
+        display: inline-block;
+      }
+    }
+
+    .main-navbar__menu-icon {
+      padding: 10px;
+      display: block;
+      position: absolute;
+      top: 23px;
+      right: 14px;
+      z-index: 1000;
+      cursor: pointer;
+
+      * {
+        pointer-events: none;
+      }
+
+      path {
+        transition: all 150ms;
+      }
+    }
+
+    &.main-navbar--mobile-open {
+      .main-navbar__menu-icon {
+        path {
+          &:nth-child(1) {
+            transform: translate(4.576px, 0.954px) rotateZ(45deg);
+          }
+
+          &:nth-child(2) {
+            opacity: 0;
+          }
+
+          &:nth-child(3) {
+            transform: rotateZ(-45deg) translate(-11px, -3.5px);
+          }
+        }
+      }
+    }
+  }
+}

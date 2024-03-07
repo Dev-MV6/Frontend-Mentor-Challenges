@@ -1,0 +1,81 @@
+.technologies-main-container {
+  .background-canvas-wrapper {
+    background-image: radial-gradient(circle at left top, #0a0d16 30%, #15111d);
+  }
+
+  .content-wrapper {
+    position: relative;
+  }
+
+  .content {
+    margin-top: 140px;
+    display: flex;
+  }
+
+  .technologies-navbar {
+    .technologies-navbar__list {
+      display: flex;
+      gap: 32px;
+    }
+
+    .technologies-navbar__link {
+      width: 80px;
+      height: 80px;
+      border-radius: 100%;
+      border: 1px solid #fff4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Bellefair";
+      font-size: 2rem;
+      cursor: pointer;
+      -webkit-user-select: none;
+      user-select: none;
+      transition: background-color, color, border-color;
+      transition-duration: 300ms, 300ms, 200ms;
+      transition-timing-function: ease-in-out;
+
+      &:hover {
+        border-color: #fff;
+      }
+
+      &.active {
+        pointer-events: none;
+        background-color: #fff;
+        color: var(--midnight-blue);
+      }
+    }
+  }
+
+  .technology-image {
+    position: absolute;
+    top: 56px;
+    right: -165px;
+  }
+
+  .technology {
+    margin-top: 2px;
+
+    .terminology-subtitle {
+      display: block;
+      font-family: "Barlow Condensed";
+      text-transform: uppercase;
+      letter-spacing: 2.7px;
+      color: var(--lavender-blue);
+    }
+
+    .technology__name {
+      font-size: 3.5rem;
+      text-transform: uppercase;
+      font-family: "Bellefair";
+      margin-top: 16px;
+    }
+
+    .technology__description {
+      margin-top: 20px;
+      max-width: 444px;
+    }
+  }
+}
+
+@import "./Technologies.resp.scss";

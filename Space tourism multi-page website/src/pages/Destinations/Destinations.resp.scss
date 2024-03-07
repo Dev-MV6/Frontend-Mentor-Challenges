@@ -1,0 +1,118 @@
+@import "../../styles/responsive";
+
+@include tablet {
+  .destinations-main-container {
+    .content-wrapper {
+      flex-direction: column;
+    }
+
+    .destination-image {
+      margin-top: 62px;
+      margin-left: 0;
+      width: 300px;
+      height: 300px;
+    }
+
+    .destinations-navbar {
+      margin-top: 52px;
+      .destinations-navbar__list {
+        justify-content: center;
+      }
+    }
+
+    .destination {
+      margin: 55px auto 0px auto;
+      max-width: 575px;
+
+      .destination__name {
+        font-size: 5rem;
+      }
+
+      .destination__description {
+        margin-top: 13px;
+      }
+
+      .destination__separator {
+        margin-top: 50px;
+      }
+
+      .destination-travel-info-wrapper {
+        .destination-travel-info {
+          position: absolute;
+          left: 50% !important;
+
+          &:nth-child(1) {
+            transform: translateX(calc(-50% - 115px));
+          }
+
+          &:nth-child(2) {
+            transform: translateX(calc(-50% + 115px));
+          }
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .destinations-main-container {
+    .background-canvas-wrapper {
+      background-image: url("./images/destination/background-destination-mobile.jpg");
+      background-size: 100vw auto;
+    }
+
+    .destination-image {
+      margin-top: 39px;
+      width: 170px;
+      height: 170px;
+    }
+
+    .destinations-navbar {
+      margin-top: 23px;
+      font-size: 0.875rem;
+      letter-spacing: 2.36px;
+
+      .destinations-navbar__list {
+        gap: 26px;
+      }
+
+      .destinations-navbar__item::after {
+        bottom: -13px;
+      }
+    }
+
+    .destination {
+      margin: 40px auto 0px auto;
+
+      .destination__name {
+        font-size: 3.5rem;
+      }
+
+      .destination__description {
+        margin-top: 5px;
+      }
+
+      .destination__separator {
+        margin-top: 34px;
+      }
+
+      .destination-travel-info-wrapper {
+        display: block;
+
+        .destination-travel-info {
+          position: static !important;
+          left: auto !important;
+        }
+
+        .destination-travel-info:nth-child(1) {
+          transform: none;
+        }
+
+        .destination-travel-info:nth-child(2) {
+          transform: none;
+          margin-top: 35px;
+        }
+      }
+    }
+  }
+}

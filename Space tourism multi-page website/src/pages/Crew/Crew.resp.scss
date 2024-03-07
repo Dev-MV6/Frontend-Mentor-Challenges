@@ -1,0 +1,126 @@
+@import "../../styles/responsive";
+
+@include tablet {
+  .crew-main-container {
+    background-image: linear-gradient(var(--midnight-blue-translucent), var(--midnight-blue-translucent)), url("./images/crew/background-crew-tablet.jpg");
+    background-size: cover, 100vw auto;
+    background-position: center, center -200px;
+    padding-bottom: 0;
+
+    .content-wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .crew-member-photo-wrapper {
+      margin: 40px auto 0px auto;
+    }
+
+    .crew-member-photo {
+      position: static;
+      width: 433px;
+    }
+
+    .crew-member {
+      margin-top: 64px;
+
+      .crew-member__role {
+        font-size: 1.5rem;
+      }
+
+      .crew-member__name {
+        font-size: 2.5rem;
+        margin-top: 13px;
+      }
+
+      .crew-member__bio {
+        margin: 18px auto 0 auto;
+        max-width: 460px;
+      }
+
+      &.crew-member--mission-specialist,
+      &.crew-member--flight-engineer {
+        .crew-member__bio {
+          max-width: 510px;
+        }
+      }
+
+      &.crew-member--pilot .crew-member__bio {
+        max-width: 590px;
+      }
+    }
+
+    .crew-navbar {
+      position: static;
+      margin-top: 37px;
+
+      .crew-navbar__list {
+        gap: 16px;
+        justify-content: center;
+
+        .crew-navbar__link {
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .crew-main-container {
+    background-image: linear-gradient(var(--midnight-blue-translucent), var(--midnight-blue-translucent)), url("./images/crew/background-crew-mobile.jpg");
+    padding-bottom: 60px;
+
+    .page-label {
+      order: -3;
+    }
+
+    .crew-member-photo-wrapper {
+      order: -2;
+      height: 223px;
+      width: 100%;
+      position: relative;
+      margin: 35px auto 0px auto;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: hsla(231deg, 77%, 90%, 0.2);
+        height: 1px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .crew-member-photo {
+      height: 100%;
+      width: auto;
+    }
+
+    .crew-navbar {
+      order: -1;
+      margin-top: 28px;
+    }
+
+    .crew-member {
+      margin-top: 32px;
+
+      .crew-member__role {
+        font-size: 1rem;
+      }
+
+      .crew-member__name {
+        font-size: 1.5rem;
+        margin-top: 13px;
+      }
+
+      .crew-member__bio {
+        margin: 18px auto 0 auto;
+        max-width: none;
+      }
+    }
+  }
+}
