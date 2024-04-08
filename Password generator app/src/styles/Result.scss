@@ -1,0 +1,41 @@
+@import "./variables";
+
+.result-container {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 30px;
+  background-color: $bg;
+
+  .result {
+    font-size: $text-lg;
+    line-break: anywhere;
+
+    .tchar {
+      opacity: 0.4;
+    }
+  }
+
+  .result--empty {
+    opacity: 0.3;
+  }
+
+  .copy-icon {
+    color: $accent-color;
+    width: 20px;
+    min-width: 20px;
+    cursor: pointer;
+    transition: color 150ms ease-in-out;
+    margin-left: 40px;
+
+    &:hover {
+      color: #fff;
+    }
+
+    &[disabled] {
+      color: $accent-color;
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+}

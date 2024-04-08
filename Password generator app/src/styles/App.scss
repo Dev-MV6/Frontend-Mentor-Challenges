@@ -1,0 +1,59 @@
+@import "./variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #15141c;
+}
+
+.main-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #15141c, #08070c);
+  font-family: "Jetbrains Mono";
+  display: flex;
+  justify-content: center;
+  user-select: none;
+  padding: 40px 20px;
+}
+
+.password-generator {
+  margin-top: 100px;
+
+  @media (max-width: 475px) or (max-height: 900px) {
+    margin-top: 10px;
+  }
+
+  width: 540px;
+  font-weight: 700;
+  color: $fg;
+  position: relative;
+}
+
+.password-generator__title {
+  color: $tinted-gray;
+  font-size: $text-md;
+  text-align: center;
+}
+
+.attribution {
+  position: absolute;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+
+  @media (max-width: 475px) or (max-height: 900px) {
+    position: static;
+    margin-bottom: 20px;
+  }
+
+  a {
+    color: $accent-color;
+  }
+}
