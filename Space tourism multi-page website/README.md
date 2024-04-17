@@ -4,7 +4,7 @@
 
 <div align="center">
   <h3>
-    <a href="https://space-tourism-8ed1e2.netlify.app">
+    <a href="https://sp4c3-t-1ad1a7.netlify.app/">
       Live
     </a>
     <span> | </span>
@@ -48,7 +48,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Frontend Mentor Solution](https://www.frontendmentor.io/solutions/space-tourism-multipage-website-CCobW-ZW5o)
-- Live Site URL: [Netlify](https://space-tourism-8ed1e2.netlify.app)
+- Live Site URL: [Netlify](https://sp4c3-t-1ad1a7.netlify.app)
 
 ## Development
 
